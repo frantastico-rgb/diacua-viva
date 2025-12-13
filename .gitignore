@@ -1,0 +1,45 @@
+# Archivos privados
+credenciales_privadas.txt
+notas_privadas.txt
+
+# Archivos temporales de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos temporales de Office
+~$*
+*.tmp
+
+# Archivos de sistema Mac (si alguien del equipo usa Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+
+# Backups
+*.bak
+backup/
+respaldos/
+
+# Node modules (si en el futuro usas Next.js)
+node_modules/
+.next/
+.cache/
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel

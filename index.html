@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DIACUA VIVA - Proyecto de investigación y gestión cultural para Villavicencio. Árbol Cultural que integra identidad, investigación y desarrollo comunitario.">
+    <meta name="keywords" content="cultura, Villavicencio, investigación cultural, gestión cultural, identidad, patrimonio">
+    <meta name="author" content="DIACUA VIVA">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <title>DIACUA VIVA - Árbol Cultural Villavicencio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5016;
+            --secondary: #6b9b37;
+            --accent: #ffa726;
+            --light: #f4f7f0;
+            --dark: #1a3409;
+            --text: #333;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+        }
+
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            display: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation Pills */
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px var(--shadow);
+        }
+
+        .nav-pill {
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-pill:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px var(--shadow);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Accordion Section */
+        .accordion {
+            margin: 2rem 0;
+        }
+
+        .accordion-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        }
+
+        .accordion-header .arrow {
+            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .accordion-item.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 2000px;
+            padding: 1.5rem;
+        }
+
+        /* Roles Section */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .role-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .role-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 6px 12px var(--shadow);
+            transform: scale(1.05);
+        }
+
+        .role-card .role-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff7043 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin: 3rem 0;
+            box-shadow: 0 6px 12px var(--shadow);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Tree Metaphor Visual */
+        .tree-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        .tree-seal {
+            display: block;
+            margin: 0 auto 1.5rem;
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            opacity: 0.85;
+            filter: grayscale(20%);
+        }
+
+        .tree-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tree-part {
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tree-part:hover {
+            transform: scale(1.05);
+        }
+
+        .tree-part.crown {
+            background: linear-gradient(135deg, #8bc34a 0%, #4caf50 100%);
+            color: white;
+        }
+
+        .tree-part.trunk {
+            background: linear-gradient(135deg, #795548 0%, #5d4037 100%);
+            color: white;
+            width: 60%;
+        }
+
+        .tree-part.roots {
+            background: linear-gradient(135deg, #6d4c41 0%, #3e2723 100%);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+
+        .stat-box .number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box .label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.2rem;
+        }
+
+        .badge.green {
+            background: #4caf50;
+        }
+
+        .badge.yellow {
+            background: #ffeb3b;
+            color: var(--text);
+        }
+
+        .badge.red {
+            background: #f44336;
+        }
+
+        /* Logo styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            max-width: 100px;
+            height: auto;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .video-logo {
+            max-width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Footer logo */
+        .footer-logo {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Proposals Section */
+        .proposals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .proposal-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px var(--shadow);
+            border-left: 5px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .proposal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+
+        .proposal-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .proposal-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .proposal-author {
+            flex: 1;
+        }
+
+        .proposal-author h4 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .proposal-author small {
+            color: #666;
+        }
+
+        .proposal-content {
+            margin: 1rem 0;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .proposal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .submit-proposal-btn {
+            background: linear-gradient(135deg, var(--accent), #ff7043);
+            color: white;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px var(--shadow);
+            text-align: center;
+            display: inline-block;
+            margin: 2rem auto;
+        }
+
+        .submit-proposal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px var(--shadow);
+        }
+
+        /* Form iframe container */
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px var(--shadow);
+            margin: 2rem 0;
+        }
+
+        .form-container iframe {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="logo-container">
+            <video class="video-logo" autoplay loop muted playsinline>
+                <source src="DIACUA VIV.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
+        <h1>DIACUA VIVA</h1>
+        <p>Diagnóstico Árbol Cultural para Villavicencio Activa</p>
+        <div class="tagline">
+            Investigación • Monitoreo • Análisis • Gestión Cultural
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation Pills -->
+        <div class="nav-pills">
+            <a href="#proyecto" class="nav-pill">El Proyecto</a>
+            <a href="#metodologia" class="nav-pill">Metodología</a>
+            <a href="#roles" class="nav-pill">Súmate</a>
+            <a href="#impacto" class="nav-pill">Impacto</a>
+            <a href="#accion" class="nav-pill">Actúa Ahora</a>
+            <a href="mailto:diacuaviva@gmail.com" class="nav-pill" style="background: var(--accent); color: white;">✉️ Contáctanos</a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats fade-in">
+            <div class="stat-box">
+                <div class="number">800K</div>
+                <div class="label">Habitantes</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">6</div>
+                <div class="label">Meses Investigación</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">1000+</div>
+                <div class="label">Encuestas</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">∞</div>
+                <div class="label">Impacto Cultural</div>
+            </div>
+        </div>
+
+        <!-- El Proyecto -->
+        <section id="proyecto" class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">¿Qué es DIACUA VIVA?</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="icon">🎯</div>
+                    <h3>Nuestra Misión</h3>
+                    <p>Proyecto de investigación, monitoreo y formulación de propuestas con enfoque de <strong>arraigo e identidad ancestral territorial</strong> para gestar núcleos de trabajo y plataforma de sostenibilidad cultural en Villavicencio.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🤝</div>
+                    <h3>Qué Hacemos</h3>
+                    <p><strong>INTEGRAR</strong> saberes, necesidades y recursos técnicos, tecnológicos, financieros, humanos y ecoturisticos hacia la contribución de la cultura con propuestas para Villavicencio.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🌍</div>
+                    <h3>Qué Buscamos</h3>
+                    <p>Consolidar la expansión de la <strong>identidad cultural de Villavicencio</strong> a nivel local, regional, nacional e internacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tree Metaphor -->
+        <section class="tree-section fade-in">
+            <img src="arbol2.jpg" alt="Sello Árbol Cultural" class="tree-seal">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">La Metáfora del Árbol Cultural</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Diagnosticamos la cultura como un organismo vivo con raíces, tronco y ramas</p>
+            
+            <div class="tree-visual">
+                <div class="tree-part crown">
+                    <h3>🍃 RAMAS Y FRUTOS</h3>
+                    <p><strong>Producción y Consumo Cultural</strong></p>
+                    <p>Artistas, colectivos, festivales, audiencias</p>
+                    <span class="badge">Diversidad</span>
+                    <span class="badge">Innovación</span>
+                    <span class="badge">Economía Naranja</span>
+                </div>
+
+                <div class="tree-part trunk">
+                    <h3>🪵 TRONCO</h3>
+                    <p><strong>Gestión e Institucionalidad</strong></p>
+                    <p>Secretaría de Cultura, presupuesto, procesos administrativos</p>
+                    <span class="badge yellow">Transparencia</span>
+                    <span class="badge yellow">Flujo de Recursos</span>
+                </div>
+
+                <div class="tree-part roots">
+                    <h3>🌱 RAÍCES</h3>
+                    <p><strong>Identidad y Memoria</strong></p>
+                    <p>Valores fundacionales, historia, patrimonio, narrativas</p>
+                    <span class="badge green">Arraigo</span>
+                    <span class="badge green">Memoria Colectiva</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Justificación Estratégica Accordion -->
+        <section id="justificacion" class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">¿Por Qué es Urgente?</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🔍 Contra el Desconocimiento: Crisis del "Paisaje Invisible"</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>La falta de investigación etnográfica y cuantitativa profunda provoca un <strong>desconocimiento operativo del paisaje cultural y subcultural vivo</strong> de Villavicencio.</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                            <li>Políticas de "talla única" que ignoran la diversidad endógena</li>
+                            <li>Malgasto de recursos públicos</li>
+                            <li>"Ceguera de periferia" - no se atienden necesidades reales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>⚖️ Contra el Sesgo: Trampa de la "Burbuja Meritocrática"</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Antídoto contra el sesgo cognitivo de la élite cultural, cuyos criterios de valor (a menudo eurocéntricos o centralistas) pueden <strong>distorsionar o invalidar las prácticas y estéticas populares</strong>.</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                            <li>Las "voces de la raíz y la rama" se convierten en datos validados</li>
+                            <li>Mitiga riesgos presupuestarios</li>
+                            <li>Asegura legitimidad institucional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🚀 Contra el Estancamiento: Catalizador de Innovación</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>La ausencia de un <strong>Sistema de Monitoreo y Seguimiento basado en datos</strong> condena a la ciudad a la obsolescencia.</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                            <li>Identifica "ideas semilla" innovadoras latentes</li>
+                            <li>Transforma potencial en bienes y servicios de alto valor agregado</li>
+                            <li>Dota a Villavicencio de ventaja competitiva geopolítica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología -->
+        <section id="metodologia" class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Metodología Científica Mixta</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>📊 Fase 1: Preparación del Terreno (Mes 1)</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul style="padding-left: 2rem;">
+                            <li>Diseño de encuestas</li>
+                            <li>Conformación del equipo de investigadores</li>
+                            <li>Mapeo de actores culturales</li>
+                            <li>Capacitación del colectivo de base</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🌾 Fase 2: La Cosecha - Trabajo de Campo (Meses 2-3)</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul style="padding-left: 2rem;">
+                            <li><strong>1000+ encuestas</strong> a ciudadanos</li>
+                            <li><strong>15 grupos focales</strong> con agentes clave</li>
+                            <li><strong>20 entrevistas a profundidad</strong></li>
+                            <li>Cartografía social de zonas culturales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🔬 Fase 3-4: Laboratorio y Análisis (Meses 4-5)</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Equipo Científico:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Director Científico (visión holística)</li>
+                            <li>1 Estadístico (índices NIA, BFR, TCC)</li>
+                            <li>2 Antropólogos/Sociólogos (análisis etnográfico)</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Indicadores Clave:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li><strong>NIA</strong>: Nivel de Arraigo Identitario</li>
+                            <li><strong>BFR</strong>: Índice de Burocracia y Flujo de Recursos</li>
+                            <li><strong>TCC</strong>: Tasa de Consumo Cultural</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>💡 Fase 5: Formulación de Propuestas (Mes 6)</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul style="padding-left: 2rem;">
+                            <li>Diseño de estrategias de mejora ("Nutrientes")</li>
+                            <li>Informe final con "Receta Cultural"</li>
+                            <li>Validación con la comunidad</li>
+                            <li>Plan Estratégico Cultural 2026-2030</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roles y Agentes de Interés -->
+        <section id="roles" class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">¿Quiénes Somos? Súmate al Ecosistema</h2>
+            
+            <div class="roles-grid">
+                <div class="role-card" onclick="showRoleModal('director')">
+                    <div class="role-icon">👔</div>
+                    <h4>Director/a</h4>
+                    <p>Liderazgo estratégico</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('investigador')">
+                    <div class="role-icon">🔬</div>
+                    <h4>Investigador/a</h4>
+                    <p>Análisis científico</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('analista')">
+                    <div class="role-icon">📊</div>
+                    <h4>Analista</h4>
+                    <p>Procesamiento de datos</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('desarrollador')">
+                    <div class="role-icon">🎨</div>
+                    <h4>Desarrollador Cultural</h4>
+                    <p>Propuestas y dispositivos</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('patrocinador')">
+                    <div class="role-icon">💼</div>
+                    <h4>Patrocinador</h4>
+                    <p>Empresas, banca, Estado</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('aliado')">
+                    <div class="role-icon">🤝</div>
+                    <h4>Aliado Estratégico</h4>
+                    <p>ONGs, entidades</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('voluntario')">
+                    <div class="role-icon">🙋</div>
+                    <h4>Voluntario/a</h4>
+                    <p>Colectivos, estudiantes</p>
+                </div>
+
+                <div class="role-card" onclick="showRoleModal('publico')">
+                    <div class="role-icon">👥</div>
+                    <h4>Público General</h4>
+                    <p>Ciudadanía activa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impacto Esperado -->
+        <section id="impacto" class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Impacto Esperado</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="icon">📈</div>
+                    <h3>Planificación Basada en Datos</h3>
+                    <p>Plan Estratégico Cultural 2026-2030 fundamentado en evidencia científica, no en suposiciones.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">💰</div>
+                    <h3>Optimización de Recursos</h3>
+                    <p>Reducción del malgasto presupuestario mediante políticas culturales personalizadas por zona.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🎭</div>
+                    <h3>Visibilización Subcultural</h3>
+                    <p>Reconocimiento y apoyo a prácticas culturales invisibilizadas de la periferia.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🌟</div>
+                    <h3>Innovación Cultural</h3>
+                    <p>Identificación de "ideas semilla" con potencial para bienes de alto valor agregado (Economía Naranja).</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🏛️</div>
+                    <h3>Legitimidad Institucional</h3>
+                    <p>Fortalecimiento de la confianza ciudadana en las instituciones culturales por transparencia y participación.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🌍</div>
+                    <h3>Competitividad Regional</h3>
+                    <p>Posicionamiento de Villavicencio como referente cultural a nivel nacional e internacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secciones Futuras (Expandibles) -->
+        <section class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Ecosistema Organizacional</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Secciones en desarrollo para un colectivo sostenible</p>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>⚖️ Aspectos Legales y Normatividad</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Marco jurídico del colectivo</li>
+                            <li>Constitución legal y estatutos</li>
+                            <li>Derechos de autor y propiedad intelectual</li>
+                            <li>Normatividad cultural colombiana</li>
+                            <li>Contratos y convenios tipo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>💵 Financiero y Presupuestos</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Modelo financiero sostenible</li>
+                            <li>Presupuesto operativo anual</li>
+                            <li>Fuentes de financiación</li>
+                            <li>Transparencia fiscal y rendición de cuentas</li>
+                            <li>Proyecciones financieras 2026-2030</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>💝 Donaciones y Crowdfunding</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Plataforma de donaciones online</li>
+                            <li>Niveles de aporte y beneficios</li>
+                            <li>Campañas de crowdfunding cultural</li>
+                            <li>Padrinos y madrinas de proyectos</li>
+                            <li>Certificados de deducción tributaria</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>📞 Contáctanos</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Formulario de contacto por rol</li>
+                            <li>Oficina física y horarios</li>
+                            <li>Redes sociales activas</li>
+                            <li>Correo electrónico institucional</li>
+                            <li>WhatsApp Business</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>📚 Laboratorio de Investigación</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Portal de acceso según rol (Dashboard)</li>
+                            <li>Base de datos de investigación cultural</li>
+                            <li>Publicaciones y papers académicos</li>
+                            <li>Herramientas de análisis en tiempo real</li>
+                            <li>Repositorio de indicadores culturales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🎓 Formación y Capacitación</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Talleres de gestión cultural</li>
+                            <li>Cursos de investigación etnográfica</li>
+                            <li>Diplomados en economía naranja</li>
+                            <li>Mentorías para colectivos emergentes</li>
+                            <li>Certificaciones profesionales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>📰 Noticias y Eventos</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Próximamente:</strong></p>
+                        <ul style="padding-left: 2rem;">
+                            <li>Blog de actualidad cultural</li>
+                            <li>Calendario de eventos y convocatorias</li>
+                            <li>Newsletter mensual</li>
+                            <li>Galería multimedia de proyectos</li>
+                            <li>Podcast "Voces del Árbol"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Propuestas Comunitarias -->
+        <section id="propuestas" class="fade-in">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">💡 Propuestas de la Comunidad</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Este espacio es para que <strong>voluntarios, gestores culturales, artistas y agentes de interés</strong> 
+                compartan sus ideas, propuestas y proyectos para el desarrollo cultural de Villavicencio.
+            </p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <button class="submit-proposal-btn" onclick="showProposalForm()">
+                    📝 Publicar Mi Propuesta
+                </button>
+            </div>
+
+            <!-- Propuestas Destacadas (Ejemplos) -->
+            <div class="proposals-grid">
+                <div class="proposal-card">
+                    <div class="proposal-header">
+                        <div class="proposal-avatar">MG</div>
+                        <div class="proposal-author">
+                            <h4>María González</h4>
+                            <small>Gestora Cultural • Voluntaria</small>
+                        </div>
+                    </div>
+                    <div class="proposal-content">
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Festival de Memoria Oral</h3>
+                        <p>Propongo crear un festival que recoja las narrativas de los fundadores de Villavicencio, 
+                        especialmente de los barrios periféricos. Un espacio intergeneracional donde los abuelos 
+                        cuenten sus historias y los jóvenes las documenten.</p>
+                    </div>
+                    <div class="proposal-tags">
+                        <span class="badge green">Raíces</span>
+                        <span class="badge">Memoria Histórica</span>
+                        <span class="badge yellow">Participación</span>
+                    </div>
+                </div>
+
+                <div class="proposal-card">
+                    <div class="proposal-header">
+                        <div class="proposal-avatar">JR</div>
+                        <div class="proposal-author">
+                            <h4>Juan Ramírez</h4>
+                            <small>Desarrollador • Voluntario Tech</small>
+                        </div>
+                    </div>
+                    <div class="proposal-content">
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">App de Mapeo Cultural</h3>
+                        <p>Crear una aplicación móvil donde la ciudadanía pueda reportar eventos culturales, 
+                        murales, espacios creativos y manifestaciones artísticas en tiempo real. Un mapa vivo 
+                        de la cultura de Villavicencio.</p>
+                    </div>
+                    <div class="proposal-tags">
+                        <span class="badge">Tecnología</span>
+                        <span class="badge green">Ramas</span>
+                        <span class="badge">Innovación</span>
+                    </div>
+                </div>
+
+                <div class="proposal-card">
+                    <div class="proposal-header">
+                        <div class="proposal-avatar">LC</div>
+                        <div class="proposal-author">
+                            <h4>Laura Castillo</h4>
+                            <small>Antropóloga • Investigadora</small>
+                        </div>
+                    </div>
+                    <div class="proposal-content">
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Observatorio de Prácticas Subculturales</h3>
+                        <p>Investigación participativa sobre culturas urbanas: hip-hop, grafiti, parkour, 
+                        skate. Documentar cómo estas prácticas resignifican el espacio público y crean 
+                        identidades alternativas.</p>
+                    </div>
+                    <div class="proposal-tags">
+                        <span class="badge">Investigación</span>
+                        <span class="badge yellow">Subculturas</span>
+                        <span class="badge green">Ramas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: var(--light); padding: 2rem; border-radius: 15px; margin-top: 3rem; text-align: center;">
+                <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
+                    ¿Tienes una idea para mejorar la cultura en Villavicencio?
+                </p>
+                <p style="color: #666; margin-bottom: 1.5rem;">
+                    Compártela con nosotros. Las mejores propuestas serán consideradas para el Plan Estratégico Cultural 2026-2030.
+                </p>
+                <button class="cta-btn" onclick="showProposalForm()">Enviar Propuesta</button>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="accion" class="cta-section fade-in">
+            <h2>🚀 ¡Es Momento de Actuar!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                La cultura de Villavicencio necesita raíces fuertes, un tronco transparente y ramas diversas.
+            </p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                <strong>Tú eres parte de este árbol. ¿Qué rol quieres tomar?</strong>
+            </p>
+            
+            <div class="cta-buttons">
+                <button class="cta-btn" onclick="showContactForm('investigar')">🔬 Quiero Investigar</button>
+                <button class="cta-btn" onclick="showContactForm('patrocinar')">💼 Quiero Patrocinar</button>
+                <button class="cta-btn" onclick="showContactForm('voluntario')">🙋 Ser Voluntario</button>
+                <button class="cta-btn" onclick="showContactForm('colaborar')">🤝 Colaborar</button>
+                <button class="cta-btn" onclick="showContactForm('donar')">💝 Donar</button>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.3);">
+                <p style="font-size: 1rem;">
+                    <strong>📧 Contacto:</strong> <a href="mailto:diacuaviva@gmail.com" style="color: #2d5016; font-weight: 600; text-decoration: none;">diacuaviva@gmail.com</a><br>
+                    <strong>📍 Ubicación:</strong> Villavicencio, Meta, Colombia
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>DIACUA VIVA</h3>
+                <p>Árbol Cultural para Villavicencio Activa</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    Iniciativa comunitaria con proyección corporativa sostenible
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <a href="#proyecto">El Proyecto</a>
+                <a href="#metodologia">Metodología</a>
+                <a href="#roles">Súmate</a>
+                <a href="#impacto">Impacto</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <a href="#" onclick="alert('Próximamente')">Documentos</a>
+                <a href="#" onclick="alert('Próximamente')">Investigaciones</a>
+                <a href="#" onclick="alert('Próximamente')">Multimedia</a>
+                <a href="#" onclick="alert('Próximamente')">Prensa</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#" onclick="alert('Próximamente')">Política de Privacidad</a>
+                <a href="#" onclick="alert('Próximamente')">Términos de Uso</a>
+                <a href="#" onclick="alert('Próximamente')">Transparencia</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            <img src="logo.png" alt="DIACUA VIVA Logo" class="footer-logo">
+            <p>&copy; 2025 DIACUA VIVA. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">
+                Desarrollado con 💚 para Villavicencio
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Modal functionality
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function showRoleModal(role) {
+            const roles = {
+                'director': {
+                    title: '👔 Director/a del Colectivo',
+                    content: `
+                        <h3>Responsabilidades:</h3>
+                        <ul>
+                            <li>Visión estratégica holística del proyecto</li>
+                            <li>Coordinación de equipos multidisciplinarios</li>
+                            <li>Relaciones institucionales y alianzas</li>
+                            <li>Supervisión de cumplimiento de objetivos</li>
+                        </ul>
+                        <h3>Perfil requerido:</h3>
+                        <ul>
+                            <li>Experiencia en gestión cultural o proyectos sociales</li>
+                            <li>Liderazgo basado en transparencia</li>
+                            <li>Conocimiento del contexto cultural de Villavicencio</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('director')">Postularme</button>
+                    `
+                },
+                'investigador': {
+                    title: '🔬 Investigador/a',
+                    content: `
+                        <h3>Áreas de investigación:</h3>
+                        <ul>
+                            <li>Etnografía cultural</li>
+                            <li>Análisis sociológico</li>
+                            <li>Estadística aplicada</li>
+                            <li>Cartografía social</li>
+                        </ul>
+                        <h3>Perfil requerido:</h3>
+                        <ul>
+                            <li>Formación en Ciencias Sociales, Antropología o afines</li>
+                            <li>Experiencia en metodologías mixtas</li>
+                            <li>Manejo de herramientas de análisis de datos</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('investigador')">Unirme al equipo</button>
+                    `
+                },
+                'analista': {
+                    title: '📊 Analista de Datos',
+                    content: `
+                        <h3>Funciones:</h3>
+                        <ul>
+                            <li>Procesamiento de encuestas (1000+)</li>
+                            <li>Cálculo de índices NIA, BFR, TCC</li>
+                            <li>Visualización de datos</li>
+                            <li>Generación de informes</li>
+                        </ul>
+                        <h3>Perfil requerido:</h3>
+                        <ul>
+                            <li>Estadística, Matemáticas o afines</li>
+                            <li>Excel avanzado, SPSS, R o Python</li>
+                            <li>Capacidad de síntesis</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('analista')">Aplicar</button>
+                    `
+                },
+                'desarrollador': {
+                    title: '🎨 Desarrollador/a Cultural',
+                    content: `
+                        <h3>Tu rol:</h3>
+                        <ul>
+                            <li>Diseño de propuestas culturales</li>
+                            <li>Creación de dispositivos culturales innovadores</li>
+                            <li>Implementación de proyectos comunitarios</li>
+                            <li>Gestión de eventos y festivales</li>
+                        </ul>
+                        <h3>Perfil ideal:</h3>
+                        <ul>
+                            <li>Artistas, gestores, productores culturales</li>
+                            <li>Creatividad y visión comunitaria</li>
+                            <li>Experiencia en proyectos culturales</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('desarrollador')">Sumarme</button>
+                    `
+                },
+                'patrocinador': {
+                    title: '💼 Patrocinador/a',
+                    content: `
+                        <h3>Beneficios de patrocinar:</h3>
+                        <ul>
+                            <li>Responsabilidad social empresarial</li>
+                            <li>Visibilidad en publicaciones y eventos</li>
+                            <li>Certificados de deducción tributaria</li>
+                            <li>Impacto medible en la comunidad</li>
+                        </ul>
+                        <h3>Niveles de patrocinio:</h3>
+                        <ul>
+                            <li><strong>Platino:</strong> Financiación completa de una fase</li>
+                            <li><strong>Oro:</strong> Apoyo a equipos de investigación</li>
+                            <li><strong>Plata:</strong> Financiación de herramientas</li>
+                            <li><strong>Bronce:</strong> Apoyo logístico</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('patrocinador')">Quiero patrocinar</button>
+                    `
+                },
+                'aliado': {
+                    title: '🤝 Aliado/a Estratégico',
+                    content: `
+                        <h3>Tipos de alianzas:</h3>
+                        <ul>
+                            <li><strong>ONGs:</strong> Co-investigación y metodologías</li>
+                            <li><strong>Universidades:</strong> Apoyo académico y estudiantes</li>
+                            <li><strong>Entidades gubernamentales:</strong> Acceso a datos</li>
+                            <li><strong>Organizaciones culturales:</strong> Redes y difusión</li>
+                        </ul>
+                        <h3>Qué ofrecemos:</h3>
+                        <ul>
+                            <li>Visibilidad conjunta</li>
+                            <li>Intercambio de conocimiento</li>
+                            <li>Fortalecimiento de redes</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('aliado')">Crear alianza</button>
+                    `
+                },
+                'voluntario': {
+                    title: '🙋 Voluntario/a',
+                    content: `
+                        <h3>Actividades voluntarias:</h3>
+                        <ul>
+                            <li>Aplicación de encuestas en campo</li>
+                            <li>Apoyo logístico en eventos</li>
+                            <li>Transcripción de entrevistas</li>
+                            <li>Difusión en redes sociales</li>
+                            <li>Apoyo en talleres comunitarios</li>
+                        </ul>
+                        <h3>Beneficios:</h3>
+                        <ul>
+                            <li>Certificado de voluntariado</li>
+                            <li>Capacitación en investigación cultural</li>
+                            <li>Networking con profesionales</li>
+                            <li>Experiencia práctica</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('voluntario')">Inscribirme</button>
+                    `
+                },
+                'publico': {
+                    title: '👥 Público General',
+                    content: `
+                        <h3>Cómo participar:</h3>
+                        <ul>
+                            <li><strong>Encuestas:</strong> Comparte tu consumo cultural</li>
+                            <li><strong>Grupos focales:</strong> Participa en conversaciones</li>
+                            <li><strong>Eventos:</strong> Asiste a presentaciones de resultados</li>
+                            <li><strong>Redes:</strong> Sigue y comparte nuestro contenido</li>
+                        </ul>
+                        <h3>Tu voz importa:</h3>
+                        <p>Cada respuesta en las encuestas es un dato que construye el mapa cultural de Villavicencio. Tu participación es esencial para un diagnóstico certero.</p>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('publico')">Participar</button>
+                    `
+                }
+            };
+
+            const roleData = roles[role];
+            document.getElementById('modal-body').innerHTML = `
+                <h2>${roleData.title}</h2>
+                ${roleData.content}
+            `;
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function showContactForm(type) {
+            // URLs de formularios externos - Actualizar con tus URLs reales
+            const formURLs = {
+                'investigar': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_INVESTIGADOR/viewform',
+                'patrocinar': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PATROCINIO/viewform',
+                'voluntario': 'https://forms.gle/22rG2MC5QbGV7RME9',  // ✅ ACTIVO
+                'colaborar': 'https://forms.gle/22rG2MC5QbGV7RME9',   // Usa el mismo de voluntario por ahora
+                'donar': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_DONACION/viewform',
+                'director': 'https://forms.gle/22rG2MC5QbGV7RME9',    // Usa voluntario por ahora
+                'investigador': 'https://forms.gle/22rG2MC5QbGV7RME9', // Usa voluntario por ahora
+                'analista': 'https://forms.gle/22rG2MC5QbGV7RME9',     // Usa voluntario por ahora
+                'desarrollador': 'https://forms.gle/22rG2MC5QbGV7RME9',// Usa voluntario por ahora
+                'aliado': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_ALIADO/viewform',
+                'publico': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PUBLICO/viewform',
+                'propuesta': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PROPUESTA/viewform'
+            };
+
+            const forms = {
+                'investigar': 'Formulario de Investigador/a',
+                'patrocinar': 'Formulario de Patrocinio',
+                'voluntario': 'Formulario de Voluntariado',
+                'colaborar': 'Formulario de Colaboración',
+                'donar': 'Formulario de Donación',
+                'director': 'Postulación Director/a',
+                'investigador': 'Postulación Investigador/a',
+                'analista': 'Postulación Analista',
+                'desarrollador': 'Postulación Desarrollador/a',
+                'aliado': 'Formulario Alianza Estratégica',
+                'publico': 'Formulario Participación Ciudadana',
+                'propuesta': 'Enviar Propuesta Comunitaria'
+            };
+
+            // Opción 1: Usar iframe (cuando tengas URL real)
+            if (formURLs[type] && !formURLs[type].includes('TU_FORMULARIO')) {
+                document.getElementById('modal-body').innerHTML = `
+                    <h2>${forms[type]}</h2>
+                    <div class="form-container">
+                        <iframe src="${formURLs[type]}" frameborder="0"></iframe>
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; color: #666;">
+                        También puedes <a href="${formURLs[type]}" target="_blank" style="color: var(--accent); font-weight: 600;">abrir el formulario en nueva pestaña</a>
+                    </p>
+                `;
+            } else {
+                // Opción 2: Formulario temporal HTML (mientras configuras Google Forms)
+                document.getElementById('modal-body').innerHTML = `
+                    <h2>${forms[type]}</h2>
+                    <p style="margin-bottom: 1.5rem;">¡Gracias por tu interés en DIACUA VIVA!</p>
+                    
+                    <div style="background: #fff3cd; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid var(--accent);">
+                        <strong>📌 Estado:</strong> Formulario en configuración.<br>
+                        <strong>Por ahora:</strong> Envía tu información a <a href="mailto:diacuaviva@gmail.com" style="color: var(--primary);">diacuaviva@gmail.com</a>
+                    </div>
+
+                    <form onsubmit="handleFormSubmit(event, '${type}')">
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nombre completo: *</label>
+                            <input type="text" name="nombre" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email: *</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Teléfono/WhatsApp: *</label>
+                            <input type="tel" name="telefono" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mensaje:</label>
+                            <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" placeholder="Cuéntanos sobre tu interés, experiencia o propuesta..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-btn" style="width: 100%;">Enviar Información</button>
+                    </form>
+                    
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+                        <p style="font-size: 0.9rem; color: #666; text-align: center;">
+                            <strong>💡 Próximamente:</strong> Formularios integrados con Google Forms para captura automática de datos
+                        </p>
+                    </div>
+                `;
+            }
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function showProposalForm() {
+            showContactForm('propuesta');
+        }
+
+        function handleFormSubmit(event, formType) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Aquí puedes integrar con un servicio backend cuando lo tengas
+            console.log('Datos del formulario:', data);
+            console.log('Tipo:', formType);
+            
+            // Por ahora, crear un mailto con la información
+            const subject = `DIACUA VIVA - ${formType}`;
+            const body = `
+Nombre: ${data.nombre}
+Email: ${data.email}
+Teléfono: ${data.telefono}
+Mensaje: ${data.mensaje || 'N/A'}
+
+Tipo de contacto: ${formType}
+            `.trim();
+            
+            const mailtoLink = `mailto:diacuaviva@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Mostrar confirmación
+            document.getElementById('modal-body').innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;">¡Gracias por tu interés!</h2>
+                    <p style="margin-bottom: 2rem;">
+                        Estamos configurando nuestro sistema de formularios. 
+                        Por favor, copia esta información y envíala por email:
+                    </p>
+                    <a href="${mailtoLink}" class="cta-btn" style="text-decoration: none;">
+                        📧 Enviar por Email
+                    </a>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
+                        O escríbenos directamente a: <a href="mailto:diacuaviva@gmail.com" style="color: var(--primary); font-weight: 600;">diacuaviva@gmail.com</a>
+                    </p>
+                    <button onclick="closeModal()" class="cta-btn" style="margin-top: 1rem; background: #ccc; color: #333;">
+                        Cerrar
+                    </button>
+                </div>
+            `;
+        }
+
+        // Close modal on outside click
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
