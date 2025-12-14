@@ -1,0 +1,16 @@
+CONTRATO DE PRESTACIÓN DE SERVICIOS DE DESARROLLO, IMPLEMENTACIÓN Y MANTENIMIENTO DE APLICACIÓN
+
+Entre [NOMBRE DEL COLECTIVO/EMPRESA] y [NOMBRE DEL DESARROLLADOR/CONTRATISTA], se acuerda lo siguiente:
+
+1. Objeto: El contratista se compromete a realizar análisis, desarrollo, implementación, gestión, testing, mantenimiento y sostenibilidad de la aplicación DIACUA VIVA.
+2. Duración: El contrato inicia el [fecha] y tendrá una fase inicial de 3 meses no remunerada, destinada a transición y consolidación del proyecto.
+3. Remuneración: Pasados los 3 meses, se establecerán pagos según acuerdo entre las partes.
+4. Propiedad intelectual: El código y documentación serán propiedad de [NOMBRE DEL COLECTIVO], salvo acuerdo diferente.
+5. Confidencialidad: El contratista se compromete a no divulgar información sensible del proyecto.
+6. Terminación: Cualquiera de las partes podrá dar por terminado el contrato con aviso previo de 15 días.
+7. Otros: [Agregar cláusulas adicionales según necesidad].
+
+Firmas:
+_________________________        _________________________
+[Colectivo/Empresa]              [Contratista]
+Fecha: ________________
