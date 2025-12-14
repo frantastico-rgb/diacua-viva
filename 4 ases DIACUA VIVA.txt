@@ -14,7 +14,7 @@ RAMAS
 
 * COMUNIDAD MAS RESILIENTE: Superación y capacidad para trascender problemas en comunidad.
 * COMUNICACIÓN MÁS ASERTVA: disminución de conflictos y fluidez comunicacional comunitaria.
-* CANALAES COMERCIALES MÁS TRANSPARENTES: Reconocimiento y aceptación de marcas propias tanto del mercado como culturales.
+* CANALAES COMERCIALES MÁS TRANSPARENTES: Reconocimiento y aceptación de marcas propias tanto del mercado como culturales.  SUBRAMA: Economía Naranja 
 
 FRUTOS.
 * CONSTRUCCIÓN DE PUENTES INSTITUCIONALES:  instancias y lobbies menos dispendiosos para acceder a la gestión cultural más eficiente. Acortar distancias y ampliar experiencias recreativas. 
@@ -203,7 +203,7 @@ El "buen humor" no se mide con sonrisas, se mide con **salud social**. Una comun
 2.  LISTADO ACTUAL DE INDICADORES DIACUA VIVA EN LA APP WEB
 
 
-ISTEMA DE INDICADORES DIACUA VIVA
+SISTEMA DE INDICADORES DIACUA VIVA
 1. RAÍCES (Identidad y Memoria)
 Área: Antropología Cultural / Etnografía
 IndicadorSiglaQué MideInstrumentoGestión EsperadaNivel de Arraigo IdentitarioNIAGrado de orgullo y pertenencia cultural de los habitantesEtnografía + Grupos FocalesSistema de semáforo (Verde/Amarillo/Rojo) para detectar crisis identitariaSalud RadicularSRConflictos históricos no resueltos, traumas colectivosPregunta Semilla de Raíces (valores y dolor histórico)Alertas de conflictos latentes que bloquean desarrollo culturalEjemplo de aplicación: NIA Alto + SR Baja = ALERTA AMARILLA (identidad fuerte pero con heridas no sanadas)
