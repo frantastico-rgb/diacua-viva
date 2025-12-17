@@ -1354,6 +1354,28 @@
                                                                             </div>
                                                                         </div>
                                                                         <button id="toggle-poem-btn" onclick="togglePoem()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #2d5016; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Leer el poema completo</button>
+                                                                            <button id="toggle-poem-btn" onclick="togglePoem()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #2d5016; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Leer el poema completo</button>
+                                                                            <button onclick="openPoemAudioModal()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #e67e22; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Escuchar el poema completo</button>
+
+                                                                        <!-- Video incrustado para escuchar el poema completo, visible en la página (no modal) -->
+                                                                        <div id="poem-audio-embed" style="display:none; width: 100%; max-width: 600px; margin: 2rem auto 0 auto;">
+                                                                            <h3 style="color: #e67e22; margin-bottom: 1.2rem; text-align: center;">Escuchar el poema completo</h3>
+                                                                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                                                                                <iframe id="poem-audio-iframe" src="" title="Escuchar el poema completo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                            </div>
+                                                                        </div>
+                                                                        <script>
+                                                                        function openPoemAudioModal() {
+                                                                            var embed = document.getElementById('poem-audio-embed');
+                                                                            var iframe = document.getElementById('poem-audio-iframe');
+                                                                            embed.style.display = 'block';
+                                                                            iframe.src = 'https://www.youtube.com/embed/ho5y_slp5f0';
+                                                                            // Permitir scroll lateral en body
+                                                                            document.body.style.overflowX = 'auto';
+                                                                            // Scroll hacia el video
+                                                                            embed.scrollIntoView({behavior: 'smooth', block: 'center'});
+                                                                        }
+                                                                        </script>
                                                                         <a href="#roles" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: var(--accent); color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block;">Súmate al Ecosistema</a>
                                 </div>
                                 </div>
@@ -1366,7 +1388,7 @@
 
         <!-- Impacto Esperado -->
         <section id="impacto" class="fade-in">
-            <div class="accordion">
+            <div class="accordion" style="max-width: 900px; margin: 0 auto;">
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>📈 Impacto Esperado</span>
@@ -1418,8 +1440,7 @@
         <section class="fade-in">
             <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Ecosistema Organizacional</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">Secciones en desarrollo para un colectivo sostenible</p>
-            
-            <div class="accordion">
+            <div class="accordion" style="max-width: 900px; margin: 0 auto;">
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>⚖️ Aspectos Legales y Normatividad</span>
@@ -1545,7 +1566,7 @@
 
         <section id="propuestas" class="fade-in">
             <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">💡 Expresiones Comunitarias</h2>
-            <div class="accordion" style="margin-bottom: 2.5rem;">
+            <div class="accordion" style="margin-bottom: 2.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <h3 style="color: var(--primary); margin: 0; font-size: 1.25rem;">Actividades Pancoger: ¡Oportunidades para Acción Inmediata!</h3>
