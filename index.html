@@ -1,59 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF48DEB9J6"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-RF48DEB9J6');
-        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DIACUA VIVA - Proyecto de investigación y gestión cultural para Villavicencio. Árbol Cultural que integra identidad, investigación y desarrollo comunitario.">
-    <meta name="keywords" content="cultura, Villavicencio, investigación cultural, gestión cultural, identidad, patrimonio">
-    <meta name="author" content="DIACUA VIVA">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-    
-    <title>DIACUA VIVA - Árbol Cultural Villavicencio</title>
+    <title>DIACUA VIVA</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF48DEB9J6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RF48DEB9J6');
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
             --primary: #2d5016;
             --secondary: #6b9b37;
-            --accent: #ffa726;
-            --light: #f4f7f0;
-            --dark: #1a3409;
+            --accent: #e67e22;
+            --dark: #343a40;
+            --light: #f8f9fa;
             --text: #333;
-            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow: rgba(0,0,0,0.1);
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+            margin: 0;
+            background: #fdfdfd;
         }
-
-        /* Header Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -62,7 +45,6 @@
             opacity: 0;
             display: none;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -70,7 +52,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
@@ -78,7 +59,6 @@
             position: relative;
             z-index: 1;
         }
-
         .tagline {
             font-size: 1.1rem;
             font-style: italic;
@@ -88,15 +68,11 @@
             display: inline-block;
             backdrop-filter: blur(10px);
         }
-
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
-
-        /* Navigation Pills */
         .nav-pills {
             display: flex;
             flex-wrap: wrap;
@@ -108,7 +84,6 @@
             border-radius: 15px;
             box-shadow: 0 4px 6px var(--shadow);
         }
-
         .nav-pill {
             padding: 0.8rem 1.5rem;
             background: var(--secondary);
@@ -120,21 +95,17 @@
             font-weight: 600;
             text-decoration: none;
         }
-
         .nav-pill:hover {
             background: var(--primary);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px var(--shadow);
         }
-
-        /* Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
-
         .card {
             background: white;
             padding: 2rem;
@@ -143,28 +114,22 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--accent);
         }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 12px var(--shadow);
         }
-
         .card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
-
         .card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-
-        /* Accordion Section */
         .accordion {
             margin: 2rem 0;
         }
-
         .accordion-item {
             background: white;
             margin-bottom: 1rem;
@@ -172,7 +137,6 @@
             overflow: hidden;
             box-shadow: 0 2px 4px var(--shadow);
         }
-
         .accordion-header {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: white;
@@ -185,40 +149,32 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-
         .accordion-header:hover {
             background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
         }
-
         .accordion-header .arrow {
             transition: transform 0.3s ease;
             font-size: 1.5rem;
         }
-
         .accordion-item.active .arrow {
             transform: rotate(180deg);
         }
-
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
             padding: 0 1.5rem;
         }
-
         .accordion-item.active .accordion-content {
             max-height: 2000px;
             padding: 1.5rem;
         }
-
-        /* Roles Section */
         .roles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .role-card {
             background: white;
             padding: 1.5rem;
@@ -228,24 +184,19 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
         .role-card:hover {
             border-color: var(--accent);
             box-shadow: 0 6px 12px var(--shadow);
             transform: scale(1.05);
         }
-
         .role-card .role-icon {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
-
         .role-card h4 {
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-
-        /* CTA Buttons */
         .cta-section {
             background: linear-gradient(135deg, var(--accent) 0%, #ff7043 100%);
             color: white;
@@ -255,12 +206,10 @@
             margin: 3rem 0;
             box-shadow: 0 6px 12px var(--shadow);
         }
-
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
         .cta-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -268,7 +217,6 @@
             justify-content: center;
             margin-top: 2rem;
         }
-
         .cta-btn {
             padding: 1rem 2rem;
             background: white;
@@ -282,14 +230,11 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .cta-btn:hover {
             background: var(--primary);
             color: white;
             transform: scale(1.1);
         }
-
-        /* Tree Metaphor Visual */
         .tree-section {
             background: white;
             padding: 3rem;
@@ -297,7 +242,6 @@
             margin: 2rem 0;
             box-shadow: 0 4px 8px var(--shadow);
         }
-
         .tree-seal {
             display: block;
             margin: 0 auto 1.5rem;
@@ -307,7 +251,6 @@
             opacity: 0.85;
             filter: grayscale(20%);
         }
-
         .tree-visual {
             display: flex;
             flex-direction: column;
@@ -315,7 +258,6 @@
             gap: 2rem;
             margin: 2rem 0;
         }
-
         .tree-part {
             width: 100%;
             max-width: 600px;
@@ -324,35 +266,28 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-
         .tree-part:hover {
             transform: scale(1.05);
         }
-
         .tree-part.crown {
             background: linear-gradient(135deg, #8bc34a 0%, #4caf50 100%);
             color: white;
         }
-
         .tree-part.trunk {
             background: linear-gradient(135deg, #795548 0%, #5d4037 100%);
             color: white;
             width: 60%;
         }
-
         .tree-part.roots {
             background: linear-gradient(135deg, #6d4c41 0%, #3e2723 100%);
             color: white;
         }
-
-        /* Stats Section */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .stat-box {
             background: white;
             padding: 2rem;
@@ -360,27 +295,22 @@
             text-align: center;
             box-shadow: 0 2px 4px var(--shadow);
         }
-
         .stat-box .number {
             font-size: 3rem;
             font-weight: bold;
             color: var(--accent);
             margin-bottom: 0.5rem;
         }
-
         .stat-box .label {
             color: var(--primary);
             font-weight: 600;
         }
-
-        /* Footer */
         footer {
             background: var(--dark);
             color: white;
             padding: 3rem 2rem;
             margin-top: 4rem;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -388,12 +318,10 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .footer-section h3 {
             color: var(--accent);
             margin-bottom: 1rem;
         }
-
         .footer-section a {
             color: white;
             text-decoration: none;
@@ -401,12 +329,9 @@
             margin: 0.5rem 0;
             transition: color 0.3s ease;
         }
-
         .footer-section a:hover {
             color: var(--accent);
         }
-
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -414,16 +339,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.45);
             z-index: 1000;
             justify-content: center;
             align-items: center;
         }
-
         .modal.active {
             display: flex;
         }
-
         .modal-content {
             background: white;
             padding: 3rem;
@@ -433,7 +356,6 @@
             overflow-y: auto;
             position: relative;
         }
-
         .modal-close {
             position: absolute;
             top: 1rem;
@@ -442,27 +364,20 @@
             cursor: pointer;
             color: var(--text);
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero p {
                 font-size: 1rem;
             }
-
             .cards-grid {
                 grid-template-columns: 1fr;
             }
-
             .cta-buttons {
                 flex-direction: column;
             }
         }
-
-        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -473,12 +388,9 @@
                 transform: translateY(0);
             }
         }
-
         .fade-in {
             animation: fadeIn 0.6s ease-out;
         }
-
-        /* Badge */
         .badge {
             display: inline-block;
             padding: 0.3rem 0.8rem;
@@ -489,21 +401,16 @@
             font-weight: 600;
             margin: 0.2rem;
         }
-
         .badge.green {
             background: #4caf50;
         }
-
         .badge.yellow {
             background: #ffeb3b;
             color: var(--text);
         }
-
         .badge.red {
             background: #f44336;
         }
-
-        /* Logo styles */
         .logo-container {
             display: flex;
             align-items: center;
@@ -512,27 +419,22 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
         .logo-img {
             max-width: 100px;
             height: auto;
             animation: fadeInScale 1s ease-out;
         }
-
         .video-logo {
             max-width: 180px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-
-        /* Footer logo */
         .footer-logo {
             max-width: 90px;
             height: auto;
             margin-bottom: 1rem;
             opacity: 0.9;
         }
-
         @keyframes fadeInScale {
             from {
                 opacity: 0;
@@ -543,15 +445,12 @@
                 transform: scale(1);
             }
         }
-
-        /* Proposals Section */
         .proposals-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
-
         .proposal-card {
             background: white;
             padding: 2rem;
@@ -560,19 +459,16 @@
             border-left: 5px solid var(--accent);
             transition: all 0.3s ease;
         }
-
         .proposal-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px var(--shadow);
         }
-
         .proposal-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
-
         .proposal-avatar {
             width: 50px;
             height: 50px;
@@ -585,33 +481,27 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
-
         .proposal-author {
             flex: 1;
         }
-
         .proposal-author h4 {
             color: var(--primary);
             margin-bottom: 0.2rem;
         }
-
         .proposal-author small {
             color: #666;
         }
-
         .proposal-content {
             margin: 1rem 0;
             color: var(--text);
             line-height: 1.8;
         }
-
         .proposal-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
         }
-
         .submit-proposal-btn {
             background: linear-gradient(135deg, var(--accent), #ff7043);
             color: white;
@@ -627,13 +517,10 @@
             display: inline-block;
             margin: 2rem auto;
         }
-
         .submit-proposal-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px var(--shadow);
         }
-
-        /* Form iframe container */
         .form-container {
             background: white;
             padding: 2rem;
@@ -641,22 +528,18 @@
             box-shadow: 0 4px 8px var(--shadow);
             margin: 2rem 0;
         }
-
         .form-container iframe {
             width: 100%;
             min-height: 800px;
             border: none;
             border-radius: 10px;
         }
-
-        /* Volunteers Grid System */
         .volunteers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .volunteer-card {
             background: white;
             padding: 1.5rem;
@@ -667,13 +550,11 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
-
         .volunteer-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             border-color: var(--primary);
         }
-
         .volunteer-avatar-large {
             width: 60px;
             height: 60px;
@@ -687,18 +568,15 @@
             font-weight: bold;
             margin: 0 auto 1rem;
         }
-
         .volunteer-card h4 {
             margin: 0.5rem 0;
             color: var(--primary);
         }
-
         .volunteer-role {
             font-size: 0.85rem;
             color: #666;
             margin: 0.3rem 0;
         }
-
         .volunteer-project {
             font-size: 0.95rem;
             font-weight: 600;
@@ -706,7 +584,6 @@
             margin: 0.8rem 0;
             min-height: 40px;
         }
-
         .volunteer-tags {
             display: flex;
             gap: 0.5rem;
@@ -714,7 +591,6 @@
             flex-wrap: wrap;
             margin: 1rem 0;
         }
-
         .tag-mini {
             font-size: 0.75rem;
             padding: 0.3rem 0.6rem;
@@ -722,11 +598,9 @@
             background: #e8f5e9;
             color: var(--primary);
         }
-
         .tag-mini.multimedia { background: #fff3e0; color: #d17a00; }
         .tag-mini.tech { background: #e3f2fd; color: #1976d2; }
         .tag-mini.investigacion { background: #f3e5f5; color: #7b1fa2; }
-
         .view-more-btn {
             background: var(--primary);
             color: white;
@@ -737,12 +611,9 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-
         .view-more-btn:hover {
             background: var(--secondary);
         }
-
-        /* Filter Buttons */
         .filter-btn {
             padding: 0.6rem 1.2rem;
             border: 2px solid var(--primary);
@@ -753,17 +624,13 @@
             transition: all 0.3s;
             font-size: 0.9rem;
         }
-
         .filter-btn:hover {
             background: var(--light);
         }
-
         .filter-btn.active {
             background: var(--primary);
             color: white;
         }
-
-        /* Modal System */
         .volunteer-modal {
             display: none;
             position: fixed;
@@ -775,7 +642,6 @@
             background: rgba(0,0,0,0.7);
             overflow-y: auto;
         }
-
         .volunteer-modal-content {
             background: white;
             margin: 5% auto;
@@ -786,12 +652,10 @@
             position: relative;
             animation: modalSlideIn 0.3s ease;
         }
-
         @keyframes modalSlideIn {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
         .close-modal {
             position: absolute;
             top: 1rem;
@@ -802,11 +666,9 @@
             cursor: pointer;
             transition: color 0.3s;
         }
-
         .close-modal:hover {
             color: #000;
         }
-
         .modal-header {
             display: flex;
             align-items: center;
@@ -815,20 +677,66 @@
             padding-bottom: 1.5rem;
             border-bottom: 2px solid var(--light);
         }
-
         @media (max-width: 768px) {
             .volunteers-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
-            
             .volunteer-modal-content {
                 width: 95%;
                 padding: 1.5rem;
             }
         }
+        #donateModal {
+            display:none; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 0; 
+            top: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background: rgba(0,0,0,0.45); 
+            overflow-y: auto;
+        }
+        #donateModal > div {
+            background: #fff; 
+            max-width: 420px; 
+            margin: 5vh auto 5vh auto; 
+            border-radius: 16px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18); 
+            padding: 2.2rem 2rem 1.5rem 2rem; 
+            position: relative; 
+            text-align: center; 
+            top: 0; 
+            transform: none; 
+            overflow-y: auto; 
+            max-height: 90vh;
+        }
+        @media (max-width: 600px) {
+            #donateModal > div {
+                max-height: 98vh !important;
+                margin: 1.5vh auto !important;
+                overflow-y: auto !important;
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Donate Modal -->
+    <div id="donateModal">
+        <div>
+            <button onclick="closeDonateModal()" style="position: absolute; top: 1.1rem; right: 1.1rem; background: none; border: none; font-size: 1.7rem; color: #e67e22; cursor: pointer;">&times;</button>
+            <h3 style="color: #e67e22; margin-bottom: 1.2rem;">Apoya la Cultura</h3>
+            <p style="color: #444; font-size: 1.05rem; margin-bottom: 1.2rem;">Puedes donar a través de nuestra cuenta o usando el código QR. ¡Gracias por tu apoyo!</p>
+            <img src="davi_plata.png" alt="DaviPlata" style="width: 120px; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-radius: 10px;">
+            <div style="margin: 1.2rem 0;">
+                <button onclick="copyAccount()" style="background: #27ae60; color: #fff; border: none; border-radius: 20px; padding: 0.7rem 2rem; font-size: 1.08rem; cursor: pointer; font-weight: 600;">Copiar número</button>
+            </div>
+            <a href="https://www.mipagocultural.com/diacuaviva" target="_blank" class="cta-btn" style="background: #27ae60; color: #fff; margin-bottom: 0.7rem; display: inline-block; font-weight: 700; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(39,174,96,0.12);">Ir a plataforma de pago</a>
+            <button onclick="shareQR()" style="margin-top: 0.7rem; background: #4267B2; color: #fff; border: none; border-radius: 20px; padding: 0.4rem 1.2rem; font-size: 0.98rem; cursor: pointer;">Compartir QR</button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="hero">
         <div class="logo-container">
@@ -1284,100 +1192,82 @@
                                     para que Villavicencio florezca con identidad y creatividad."
                                 </p>
                                 <div style="margin: 2.2rem 0 0 0; text-align: center;">
-                                                                        <div id="poem-container" style="font-size: 1rem; color: #444; background: #f7f7f7; border-left: 4px solid var(--secondary); margin: 0 auto 1.2rem auto; padding: 1.1rem 1.5rem; border-radius: 10px; max-width: 420px; text-align: left; font-style: italic;">
-                                                                            <div id="poem-snippet">
-                                                                                He estado muy feliz,<br>
-                                                                                pues en este último año<br>
-                                                                                he crecido... ¡más de mil!<br>
-                                                                                Pero gracias a susMercedes<br>
-                                                                                por cada palabra de ustedes,<br>
-                                                                                con sus historias y leyendas<br>
-                                                                                que mueven cien mil agendas.<br>
-                                                                                Con historias invencibles...
-                                                                            </div>
-                                                                            <div id="poem-full" style="display: none; max-height: 40vh; overflow-y: auto; padding-right: 1rem;">
-                                                                                He estado muy feliz,<br>
-                                                                                pues en este último año<br>
-                                                                                he crecido... ¡más de mil!<br>
-                                                                                Pero gracias a susMercedes<br>
-                                                                                por cada palabra de ustedes,<br>
-                                                                                con sus historias y leyendas<br>
-                                                                                que mueven cien mil agendas.<br>
-                                                                                Con historias invencibles,<br><br>
-                                                                                por eso me paro a decirles:<br>
-                                                                                <em>"Una palabra tuya<br>
-                                                                                bastará para sanarme".</em><br>
-                                                                                ¡Esto es algo increíble!<br><br>
-                                                                                Tienen el don y los capitales<br>
-                                                                                de elevar mi inspiración<br>
-                                                                                y tocar mi corazón<br>
-                                                                                sin cantar ni una canción...<br>
-                                                                                ¡hasta me erizo como la Grisales!<br><br>
-                                                                                Pero ojo, agradezco tu paciencia:<br>
-                                                                                si me erizo no es de "diva" ni apariencia,<br>
-                                                                                sino que a veces me erizo como el erizo:<br>
-                                                                                puedo pensar sin pedir permiso<br>
-                                                                                No es un incomodar postizo,<br>
-                                                                                Tan solo exorcizo hechizos <br>
-                                                                                Que nos ayude a pensar Conciso <br>
-                                                                                Y salgamos ya del Pailon  <br>
-                                                                                que nos saca del quicio <br><br>
-
-                                                                                Mejor, ver lo que Euclides quiso <br>
-                                                                                Al Explicar su paradoja ¿qué dijo? <br>
-                                                                                Averíagulo tu mismo, y no pierdas prestigio <br>
-                                                                                que el genio de la geometría <br>
-                                                                                me mostró sus artimañas  y poesias <br>
-                                                                                para entender sus enigmas <br>
-                                                                                y salir del abismo <br>
-                                                                                de los dogmas y los prejuicios <br>
-                                                                                que nos tienen en vicio<br>
-                                                                                de pensar sin juicio <br>
-                                                                                y vivir sin beneficio<br>
-                                                                                de la cultura y los versos <br>
-                                                                                que nos hacen libres y diversos<br>
-                                                                                como los rios y los cerros<br>
-                                                                                que adornan nuestros suelos.<br><br>
-
-                                                                                Por eso, gracias por tus palabras.<br>
-                                                                                Me inspiran más que las alboradas<br>
-                                                                                y me llenan de energía<br>para seguir sembrando versos.<br><br>
-                                                                                Pero no fue rogando ni pidiendo permiso <br>
-                                                                                Y dudo mucho que haya sido preciso <br>
-                                                                                Ni que haya alguien que ose haberlo dicho:<br>
-                                                                                que así no fue como Dios nos hizo <br><br>
-                                                                                Por tanto, infinita gratitud por tu presencia.<br>
-                                                                                No busco cambiar mil mundos ni dar elocuencias,<br>
-                                                                                tan solo quiero saludarte sin tropiezos,<br>
-                                                                                como lo haría...<br>
-                                                                                este sembrador de versos.
-                                                                            </div>
-                                                                        </div>
-                                                                        <button id="toggle-poem-btn" onclick="togglePoem()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #2d5016; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Leer el poema completo</button>
-                                                                            <button id="toggle-poem-btn" onclick="togglePoem()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #2d5016; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Leer el poema completo</button>
-                                                                            <button onclick="openPoemAudioModal()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #e67e22; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Escuchar el poema completo</button>
-
-                                                                        <!-- Video incrustado para escuchar el poema completo, visible en la página (no modal) -->
-                                                                        <div id="poem-audio-embed" style="display:none; width: 100%; max-width: 600px; margin: 2rem auto 0 auto;">
-                                                                            <h3 style="color: #e67e22; margin-bottom: 1.2rem; text-align: center;">Escuchar el poema completo</h3>
-                                                                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
-                                                                                <iframe id="poem-audio-iframe" src="" title="Escuchar el poema completo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                                            </div>
-                                                                        </div>
-                                                                        <script>
-                                                                        function openPoemAudioModal() {
-                                                                            var embed = document.getElementById('poem-audio-embed');
-                                                                            var iframe = document.getElementById('poem-audio-iframe');
-                                                                            embed.style.display = 'block';
-                                                                            iframe.src = 'https://www.youtube.com/embed/ho5y_slp5f0';
-                                                                            // Permitir scroll lateral en body
-                                                                            document.body.style.overflowX = 'auto';
-                                                                            // Scroll hacia el video
-                                                                            embed.scrollIntoView({behavior: 'smooth', block: 'center'});
-                                                                        }
-                                                                        </script>
-                                                                        <a href="#roles" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: var(--accent); color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block;">Súmate al Ecosistema</a>
-                                </div>
+                                    <div id="poem-container" style="font-size: 1rem; color: #444; background: #f7f7f7; border-left: 4px solid var(--secondary); margin: 0 auto 1.2rem auto; padding: 1.1rem 1.5rem; border-radius: 10px; max-width: 420px; text-align: left; font-style: italic;">
+                                        <div id="poem-snippet">
+                                            He estado muy feliz,<br>
+                                            pues en este último año<br>
+                                            he crecido... ¡más de mil!<br>
+                                            Pero gracias a susMercedes<br>
+                                            por cada palabra de ustedes,<br>
+                                            con sus historias y leyendas<br>
+                                            que mueven cien mil agendas.<br>
+                                            Con historias invencibles...
+                                        </div>
+                                        <div id="poem-full" style="display: none; max-height: 40vh; overflow-y: auto; padding-right: 1rem;">
+                                            He estado muy feliz,<br>
+                                            pues en este último año<br>
+                                            he crecido... ¡más de mil!<br>
+                                            Pero gracias a susMercedes<br>
+                                            por cada palabra de ustedes,<br>
+                                            con sus historias y leyendas<br>
+                                            que mueven cien mil agendas.<br>
+                                            Con historias invencibles,<br><br>
+                                            por eso me paro a decirles:<br>
+                                            <em>"Una palabra tuya<br>
+                                            bastará para sanarme".</em><br>
+                                            ¡Esto es algo increíble!<br><br>
+                                            Tienen el don y los capitales<br>
+                                            de elevar mi inspiración<br>
+                                            y tocar mi corazón<br>
+                                            sin cantar ni una canción...<br>
+                                            ¡hasta me erizo como la Grisales!<br><br>
+                                            Pero ojo, agradezco tu paciencia:<br>
+                                            si me erizo no es de "diva" ni apariencia,<br>
+                                            sino que a veces me erizo como el erizo:<br>
+                                            puedo pensar sin pedir permiso<br>
+                                            No es un incomodar postizo,<br>
+                                            Tan solo exorcizo hechizos <br>
+                                            Que nos ayude a pensar Conciso <br>
+                                            Y salgamos ya del Pailon  <br>
+                                            que nos saca del quicio <br><br>
+                                            Mejor, ver lo que Euclides quiso <br>
+                                            Al Explicar su paradoja ¿qué dijo? <br>
+                                            Averíagulo tu mismo, y no pierdas prestigio <br>
+                                            que el genio de la geometría <br>
+                                            me mostró sus artimañas  y poesias <br>
+                                            para entender sus enigmas <br>
+                                            y salir del abismo <br>
+                                            de los dogmas y los prejuicios <br>
+                                            que nos tienen en vicio<br>
+                                            de pensar sin juicio <br>
+                                            y vivir sin beneficio<br>
+                                            de la cultura y los versos <br>
+                                            que nos hacen libres y diversos<br>
+                                            como los rios y los cerros<br>
+                                            que adornan nuestros suelos.<br><br>
+                                            Por eso, gracias por tus palabras.<br>
+                                            Me inspiran más que las alboradas<br>
+                                            y me llenan de energía<br>para seguir sembrando versos.<br><br>
+                                            Pero no fue rogando ni pidiendo permiso <br>
+                                            Y dudo mucho que haya sido preciso <br>
+                                            Ni que haya alguien que ose haberlo dicho:<br>
+                                            que así no fue como Dios nos hizo <br><br>
+                                            Por tanto, infinita gratitud por tu presencia.<br>
+                                            No busco cambiar mil mundos ni dar elocuencias,<br>
+                                            tan solo quiero saludarte sin tropiezos,<br>
+                                            como lo haría...<br>
+                                            este sembrador de versos.
+                                        </div>
+                                    </div>
+                                    <button id="toggle-poem-btn" onclick="togglePoem()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #2d5016; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer;">Leer el poema completo</button>
+                                    <button onclick="openPoemAudioModal()" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: #e67e22; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block; border: none; cursor: pointer; margin-left: 0.5rem;">Escuchar poema</button>
+                                    <div id="poem-audio-embed" style="display:none; width: 100%; max-width: 600px; margin: 2rem auto 0 auto;">
+                                        <h3 style="color: #e67e22; margin-bottom: 1.2rem; text-align: center;">Escuchar el poema completo</h3>
+                                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                                            <iframe id="poem-audio-iframe" src="" title="Escuchar el poema completo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+<a href="#roles" class="cta-btn" style="font-size: 1.08rem; padding: 0.7rem 2rem; background: var(--accent); color: white; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; display: inline-block;">Súmate al Ecosistema</a>
                                 </div>
                             </div>
                         </div>
@@ -1396,40 +1286,36 @@
                     </div>
                     <div class="accordion-content">
                         <div class="cards-grid">
-                <div class="card">
-                    <div class="icon">📈</div>
-                    <h3>Planificación Basada en Datos</h3>
-                    <p>Plan Estratégico Cultural 2026-2030 fundamentado en evidencia científica, no en suposiciones.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">💰</div>
-                    <h3>Optimización de Recursos</h3>
-                    <p>Reducción del malgasto presupuestario mediante políticas culturales personalizadas por zona.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🎭</div>
-                    <h3>Visibilización Subcultural</h3>
-                    <p>Reconocimiento y apoyo a prácticas culturales invisibilizadas de la periferia.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🌟</div>
-                    <h3>Innovación Cultural</h3>
-                    <p>Identificación de "ideas semilla" con potencial para bienes de alto valor agregado (Economía Naranja).</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🏛️</div>
-                    <h3>Legitimidad Institucional</h3>
-                    <p>Fortalecimiento de la confianza ciudadana en las instituciones culturales por transparencia y participación.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🌍</div>
-                    <h3>Competitividad Regional</h3>
-                    <p>Posicionamiento de Villavicencio como referente cultural a nivel nacional e internacional.</p>
+                            <div class="card">
+                                <div class="icon">📈</div>
+                                <h3>Planificación Basada en Datos</h3>
+                                <p>Plan Estratégico Cultural 2026-2030 fundamentado en evidencia científica, no en suposiciones.</p>
+                            </div>
+                            <div class="card">
+                                <div class="icon">💰</div>
+                                <h3>Optimización de Recursos</h3>
+                                <p>Reducción del malgasto presupuestario mediante políticas culturales personalizadas por zona.</p>
+                            </div>
+                            <div class="card">
+                                <div class="icon">🎭</div>
+                                <h3>Visibilización Subcultural</h3>
+                                <p>Reconocimiento y apoyo a prácticas culturales invisibilizadas de la periferia.</p>
+                            </div>
+                            <div class="card">
+                                <div class="icon">🌟</div>
+                                <h3>Innovación Cultural</h3>
+                                <p>Identificación de "ideas semilla" con potencial para bienes de alto valor agregado (Economía Naranja).</p>
+                            </div>
+                            <div class="card">
+                                <div class="icon">🏛️</div>
+                                <h3>Legitimidad Institucional</h3>
+                                <p>Fortalecimiento de la confianza ciudadana en las instituciones culturales por transparencia y participación.</p>
+                            </div>
+                            <div class="card">
+                                <div class="icon">🌍</div>
+                                <h3>Competitividad Regional</h3>
+                                <p>Posicionamiento de Villavicencio como referente cultural a nivel nacional e internacional.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1457,7 +1343,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>💵 Financiero y Presupuestos</span>
@@ -1474,7 +1359,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>💝 Donaciones y Crowdfunding</span>
@@ -1491,7 +1375,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>📞 Contáctanos</span>
@@ -1508,7 +1391,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>📚 Laboratorio de Investigación</span>
@@ -1525,7 +1407,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>🎓 Formación y Capacitación</span>
@@ -1542,7 +1423,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>📰 Noticias y Eventos</span>
@@ -1563,7 +1443,6 @@
         </section>
 
         <!-- Propuestas Comunitarias -->
-
         <section id="propuestas" class="fade-in">
             <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">💡 Expresiones Comunitarias</h2>
             <div class="accordion" style="margin-bottom: 2.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">
@@ -1612,8 +1491,6 @@
 
             <!-- Cards Grid Compactas -->
             <div class="volunteers-grid">
-            <!-- Cards Grid Compactas -->
-            <div class="volunteers-grid">
                 
                 <!-- Card 1: Francisco rgb -->
                 <div class="volunteer-card" data-tags="raices multimedia" onclick="openVolunteerModal('francisco')">
@@ -1650,6 +1527,45 @@
                     <div class="volunteer-tags">
                         <span class="tag-mini investigacion">🔬 Investigación</span>
                         <span class="tag-mini ramas">🍃 Ramas</span>
+                    </div>
+                    <button class="view-more-btn">Ver propuesta →</button>
+                </div>
+
+                <!-- Card 4: Teopolítica -->
+                <div class="volunteer-card" data-tags="investigacion tronco" onclick="openVolunteerModal('teopolitica')">
+                    <div class="volunteer-avatar-large" style="background: #34495e;">TP</div>
+                    <h4>Teopolítica</h4>
+                    <p class="volunteer-role">Ingeniería Política</p>
+                    <p class="volunteer-project">Biomimética y Gestión</p>
+                    <div class="volunteer-tags">
+                        <span class="tag-mini investigacion">🔬 Investigación</span>
+                        <span class="tag-mini" style="background: #fff3e0; color: #d17a00;">🪵 Tronco</span>
+                    </div>
+                    <button class="view-more-btn">Ver propuesta →</button>
+                </div>
+
+                <!-- Card 5: Ekine -->
+                <div class="volunteer-card" data-tags="raices ramas" onclick="openVolunteerModal('ekine')">
+                    <div class="volunteer-avatar-large" style="background: #e67e22;">EK</div>
+                    <h4>Ekine</h4>
+                    <p class="volunteer-role">Laboratorio de Identidad</p>
+                    <p class="volunteer-project">Fruta de la Pasión</p>
+                    <div class="volunteer-tags">
+                        <span class="tag-mini raices">🌱 Raíces</span>
+                        <span class="tag-mini ramas">🍃 Ramas</span>
+                    </div>
+                    <button class="view-more-btn">Ver propuesta →</button>
+                </div>
+
+                <!-- Card 6: Dominion Natura -->
+                <div class="volunteer-card" data-tags="tech investigacion" onclick="openVolunteerModal('dominion')">
+                    <div class="volunteer-avatar-large" style="background: #27ae60;">DN</div>
+                    <h4>Dominion Natura</h4>
+                    <p class="volunteer-role">Gamificación</p>
+                    <p class="volunteer-project">Simulador Ambiental</p>
+                    <div class="volunteer-tags">
+                        <span class="tag-mini tech">💻 Tecnología</span>
+                        <span class="tag-mini investigacion">🔬 Investigación</span>
                     </div>
                     <button class="view-more-btn">Ver propuesta →</button>
                 </div>
@@ -1716,6 +1632,22 @@
                         </iframe>
                     </div>
                     
+                    <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Evolución económica de la guitarridad</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Análisis de la evolución cultural y económica a través del instrumento.
+                    </p>
+                    
+                    <!-- Video 3 -->
+                    <div style="margin: 1.5rem 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                            src="https://www.youtube.com/embed/twCDXKnrYYA" 
+                            title="Evolución económica de la guitarridad" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
                     <div class="volunteer-tags" style="margin-top: 2rem;">
                         <span class="badge green">Raíces</span>
                         <span class="badge">Poesía Llanera</span>
@@ -1778,6 +1710,89 @@
                 </div>
             </div>
 
+            <!-- Modal: Teopolítica -->
+            <div id="modal-teopolitica" class="volunteer-modal">
+                <div class="volunteer-modal-content">
+                    <span class="close-modal" onclick="closeVolunteerModal('teopolitica')">&times;</span>
+                    <div class="modal-header">
+                        <div class="volunteer-avatar-large" style="width: 80px; height: 80px; font-size: 2rem; background: #34495e;">TP</div>
+                        <div>
+                            <h2>Teopolítica</h2>
+                            <p style="color: #666;">Eje de Biomimética y Política (La Ingeniería)</p>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Teoría Orgánica de la Política</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Traduce sistemas biológicos a indicadores de gestión (Vitalidad, Estabilidad, Adaptabilidad).
+                        <br><strong>El Valor:</strong> Política Basada en Evidencia Biológica. Esto es vanguardia pura, el sueño de un "Ingeniero Político" que busca salir de la ideología ciega.
+                    </p>
+                    
+                    <a href="https://teopolitica.vercel.app/" target="_blank" class="cta-btn" style="text-decoration: none; display: inline-block; margin-top: 1rem;">🌐 Visitar Web Interactiva</a>
+                    
+                    <div class="volunteer-tags" style="margin-top: 2rem;">
+                        <span class="badge">Biomimética</span>
+                        <span class="badge yellow">Política</span>
+                        <span class="badge green">Investigación</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal: Ekine -->
+            <div id="modal-ekine" class="volunteer-modal">
+                <div class="volunteer-modal-content">
+                    <span class="close-modal" onclick="closeVolunteerModal('ekine')">&times;</span>
+                    <div class="modal-header">
+                        <div class="volunteer-avatar-large" style="width: 80px; height: 80px; font-size: 2rem; background: #e67e22;">EK</div>
+                        <div>
+                            <h2>Ekine</h2>
+                            <p style="color: #666;">Eje de Laboratorio de Identidad (El Mercado)</p>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Fruta de la Pasión</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        <strong>El Valor:</strong> Conectar identidad de territorio con productos de calidad tipo exportación agrícola con la emoción estética.
+                    </p>
+                    
+                    <a href="https://ekine1.vercel.app/" target="_blank" class="cta-btn" style="text-decoration: none; display: inline-block; margin-top: 1rem;">🌐 Ver Proyecto Ekine</a>
+                    
+                    <div class="volunteer-tags" style="margin-top: 2rem;">
+                        <span class="badge green">Identidad</span>
+                        <span class="badge yellow">Mercado</span>
+                        <span class="badge">Exportación</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal: Dominion Natura -->
+            <div id="modal-dominion" class="volunteer-modal">
+                <div class="volunteer-modal-content">
+                    <span class="close-modal" onclick="closeVolunteerModal('dominion')">&times;</span>
+                    <div class="modal-header">
+                        <div class="volunteer-avatar-large" style="width: 80px; height: 80px; font-size: 2rem; background: #27ae60;">DN</div>
+                        <div>
+                            <h2>Dominion Natura</h2>
+                            <p style="color: #666;">Eje de Gamificación y Estrategia (La Ciencia)</p>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: var(--primary); margin: 2rem 0 1rem;">Isla Flor / Dominion Natura</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        No lo llames solo "juego". Es un Simulador de Formulación de Proyectos y Sostenibilidad Ambiental.
+                        <br><strong>El Valor:</strong> Estás aplicando la "Teoría de Juegos" al manejo de riesgos (R.O.P.I.). Esto es Ingeniería de la Apropiación.
+                    </p>
+                    
+                    <a href="https://dominion-nat-6.vercel.app/" target="_blank" class="cta-btn" style="text-decoration: none; display: inline-block; margin-top: 1rem;">🎮 Jugar Simulador</a>
+                    
+                    <div class="volunteer-tags" style="margin-top: 2rem;">
+                        <span class="badge">Gamificación</span>
+                        <span class="badge green">Sostenibilidad</span>
+                        <span class="badge yellow">Estrategia</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Call to Action -->
@@ -1796,49 +1811,6 @@
                 <a href="https://forms.gle/qNGx3jNW1HX8AK8JA" target="_blank" rel="noopener noreferrer" class="cta-btn" style="text-decoration: none;">🙋 Ser Voluntario</a>
                 <a href="https://forms.gle/qNGx3jNW1HX8AK8JA" target="_blank" rel="noopener noreferrer" class="cta-btn" style="text-decoration: none;">🤝 Colaborar</a>
                 <button onclick="openDonateModal()" class="cta-btn" style="text-decoration: none; background: #e67e22; color: #fff; border: none; cursor: pointer;">💝 Donar</button>
-            <!-- Modal Donar -->
-            <div id="donateModal" style="display:none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.45); overflow-y: auto;">
-                <div style="background: #fff; max-width: 420px; margin: 5vh auto 5vh auto; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 2.2rem 2rem 1.5rem 2rem; position: relative; text-align: center; top: 0; transform: none; overflow-y: auto; max-height: 90vh;">
-                    <button onclick="closeDonateModal()" style="position: absolute; top: 1.1rem; right: 1.1rem; background: none; border: none; font-size: 1.7rem; color: #e67e22; cursor: pointer;">&times;</button>
-                    <h3 style="color: #e67e22; margin-bottom: 1.2rem;">Apoya la Cultura</h3>
-                    <p style="color: #444; font-size: 1.05rem; margin-bottom: 1.2rem;">Puedes donar a través de nuestra cuenta o usando el código QR. ¡Gracias por tu apoyo!</p>
-                    <img src="davi_plata.png" alt="QR Donar" style="width: 130px; height: 80px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); margin-bottom: 1rem;">
-                    <div style="margin-bottom: 1.2rem;">
-                        <strong>BREB / DaviPlata:</strong><br>
-                        317 424 7923<br>
-                        <button onclick="copyAccount()" style="margin-top: 0.5rem; background: #27ae60; color: #fff; border: none; border-radius: 20px; padding: 0.4rem 1.2rem; font-size: 0.98rem; cursor: pointer;">Copiar número</button>
-                    </div>
-                    <!-- Botón verde vibrante para plataforma de pago principal -->
-                    <a href="https://www.mipagocultural.com/diacuaviva" target="_blank" class="cta-btn" style="background: #27ae60; color: #fff; margin-bottom: 0.7rem; display: inline-block; font-weight: 700; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(39,174,96,0.12);">Ir a plataforma de pago</a>
-                    <!-- Opción BREB/DaviPlata visible, otras opciones eliminadas hasta nuevo aviso -->
-                    <button onclick="shareQR()" style="margin-top: 0.7rem; background: #4267B2; color: #fff; border: none; border-radius: 20px; padding: 0.4rem 1.2rem; font-size: 0.98rem; cursor: pointer;">Compartir QR</button>
-                </div>
-            </div>
-            <script>
-            function openDonateModal() {
-                document.getElementById('donateModal').style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
-            function closeDonateModal() {
-                document.getElementById('donateModal').style.display = 'none';
-                document.body.style.overflow = '';
-            }
-            function copyAccount() {
-                navigator.clipboard.writeText('317 424 7923');
-                alert('Número copiado: 317 424 7923');
-            }
-            function shareQR() {
-                if (navigator.share) {
-                    navigator.share({
-                        title: 'Donar a DIACUA VIVA',
-                        text: 'Apoya la cultura de Villavicencio. Escanea este QR para donar.',
-                        url: window.location.origin + '/qr-donacion.png'
-                    });
-                } else {
-                    alert('Para compartir el QR, descarga la imagen y compártela manualmente.');
-                }
-            }
-            </script>
             </div>
 
             <!-- QR Code para Registro Rápido -->
@@ -1931,23 +1903,41 @@
 
     <!-- JavaScript -->
     <script>
-        // Accordion functionality
+        function openDonateModal() {
+            document.getElementById('donateModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDonateModal() {
+            document.getElementById('donateModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        function copyAccount() {
+            navigator.clipboard.writeText('317 424 7923');
+            alert('Número copiado: 317 424 7923');
+        }
+        function shareQR() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Donar a DIACUA VIVA',
+                    text: 'Apoya la cultura de Villavicencio. Escanea este QR para donar.',
+                    url: window.location.origin + '/qr-donacion.png'
+                });
+            } else {
+                alert('Para compartir el QR, descarga la imagen y compártela manualmente.');
+            }
+        }
         function toggleAccordion(header) {
             const item = header.parentElement;
             const isActive = item.classList.contains('active');
             
-            // Close all accordion items
             document.querySelectorAll('.accordion-item').forEach(i => {
                 i.classList.remove('active');
             });
             
-            // Open clicked item if it wasn't active
             if (!isActive) {
                 item.classList.add('active');
             }
         }
-
-        // Poem toggle functionality
         function togglePoem() {
             const snippet = document.getElementById('poem-snippet');
             const full = document.getElementById('poem-full');
@@ -1963,12 +1953,17 @@
                 btn.textContent = 'Leer el poema completo';
             }
         }
-
-        // Modal functionality
+        function openPoemAudioModal() {
+            var embed = document.getElementById('poem-audio-embed');
+            var iframe = document.getElementById('poem-audio-iframe');
+            embed.style.display = 'block';
+            iframe.src = 'https://www.youtube.com/embed/ho5y_slp5f0';
+            document.body.style.overflowX = 'auto';
+            embed.scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
         function closeModal() {
             document.getElementById('modal').classList.remove('active');
         }
-
         function showRoleModal(role) {
             const roles = {
                 'director': {
@@ -1993,7 +1988,7 @@
                         <p>Liderazgo Estratégico Antifrágil: Unir la ética de las 4 As con la visión de la Campana de Gauss para garantizar la solidez del retorno social (SROI) a los inversores.</p>
                         <h3>Perfil requerido para co-liderazgo:</h3>
                         <ul>
-                            <li>Experiencia en gestión cultural o proyectos sociales</li>
+                            <li>Experiencia en gestión cultural o proyectos sociais</li>
                             <li>Liderazgo basado en transparencia</li>
                             <li>Conocimiento del contexto cultural de Villavicencio</li>
                         </ul>
@@ -2015,52 +2010,51 @@
                     `
                 },
                 'analista': {
-                                    title: '📊 Analista de Datos',
-                                    content: `
-                                        <h3>Funciones:</h3>
-                                        <ul>
-                                            <li>Procesamiento de encuestas (1000+)</li>
-                                            <li>Cálculo de índices NIA, BFR, TCC</li>
-                                            <li>Visualización de datos</li>
-                                            <li>Generación de informes</li>
-                                        </ul>
-                                        <h3>Tu rol estratégico:</h3>
-                                        <p>El Guardián de la Métrica: Procesa los datos del Investigador/a y monitorea la salud del Árbol.</p>
-                                        <h3>Retos:</h3>
-                                        <p>Mapeo de la Campana de Gauss: Interpreta la <a href="#metodologia" onclick="closeModal()">realidad económica</a> de los KPI (NIA, BFR, TCC) y visualiza la salud del Árbol para guiar la inversión.</p>
-                                        <h3>Perfil requerido:</h3>
-                                        <ul>
-                                            <li>Estadística, Matemáticas o afines</li>
-                                            <li>Excel avanzado, SPSS, R o Python</li>
-                                            <li>Capacidad de síntesis</li>
-                                        </ul>
-                                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('analista')">Aplicar</button>
-                                    `
-                                },
-                
-                                'desarrollador': {
-                                    title: '🎨 Desarrollador/a Cultural',
-                                    content: `
-                                        <h3>Tu rol:</h3>
-                                        <ul>
-                                            <li>Diseño de propuestas culturales</li>
-                                            <li>Creación de dispositivos culturales innovadores</li>
-                                            <li>Implementación de proyectos comunitarios</li>
-                                            <li>Gestión de eventos y festivales</li>
-                                        </ul>
-                                        <h3>Rol Estratégico:</h3>
-                                        <p>El Hacedor de Soluciones: Crea las propuestas y los dispositivos que resuelven los problemas del Árbol (NIA, BFR, TCC).</p>
-                                        <h3>Ingeniería de la Autenticidad:</h3>
-                                        <p>Diseña los <a href="https://www.facebook.com/share/g/17on7GxkaR/" target="_blank" rel="noopener noreferrer">dispositivos</a> (proyectos y soluciones) que garantizan las 4 As y corrigen las fallas del Árbol (NIA, BFR, TCC).</p>
-                                        <h3>Perfil ideal:</h3>
-                                        <ul>
-                                            <li>Artistas, gestores, productores culturales</li>
-                                            <li>Creatividad y visión comunitaria</li>
-                                            <li>Experiencia en proyectos culturales</li>
-                                        </ul>
-                                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('desarrollador')">Sumarme</button>
-                                    `
-                                },
+                    title: '📊 Analista de Datos',
+                    content: `
+                        <h3>Funciones:</h3>
+                        <ul>
+                            <li>Procesamiento de encuestas (1000+)</li>
+                            <li>Cálculo de índices NIA, BFR, TCC</li>
+                            <li>Visualización de datos</li>
+                            <li>Generación de informes</li>
+                        </ul>
+                        <h3>Tu rol estratégico:</h3>
+                        <p>El Guardián de la Métrica: Procesa los datos del Investigador/a y monitorea la salud del Árbol.</p>
+                        <h3>Retos:</h3>
+                        <p>Mapeo de la Campana de Gauss: Interpreta la <a href="#metodologia" onclick="closeModal()">realidad económica</a> de los KPI (NIA, BFR, TCC) y visualiza la salud del Árbol para guiar la inversión.</p>
+                        <h3>Perfil requerido:</h3>
+                        <ul>
+                            <li>Estadística, Matemáticas o afines</li>
+                            <li>Excel avanzado, SPSS, R o Python</li>
+                            <li>Capacidad de síntesis</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('analista')">Aplicar</button>
+                    `
+                },
+                'desarrollador': {
+                    title: '🎨 Desarrollador/a Cultural',
+                    content: `
+                        <h3>Tu rol:</h3>
+                        <ul>
+                            <li>Diseño de propuestas culturais</li>
+                            <li>Creación de dispositivos culturales innovadores</li>
+                            <li>Implementación de proyectos comunitarios</li>
+                            <li>Gestión de eventos y festivales</li>
+                        </ul>
+                        <h3>Rol Estratégico:</h3>
+                        <p>El Hacedor de Soluciones: Crea las propuestas y los dispositivos que resuelven los problemas del Árbol (NIA, BFR, TCC).</p>
+                        <h3>Ingeniería de la Autenticidad:</h3>
+                        <p>Diseña los <a href="https://www.facebook.com/share/g/17on7GxkaR/" target="_blank" rel="noopener noreferrer">dispositivos</a> (proyectos y soluciones) que garantizan las 4 As y corrigen las fallas del Árbol (NIA, BFR, TCC).</p>
+                        <h3>Perfil ideal:</h3>
+                        <ul>
+                            <li>Artistas, gestores, productores culturales</li>
+                            <li>Creatividad y visión comunitaria</li>
+                            <li>Experiencia en proyectos culturales</li>
+                        </ul>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('desarrollador')">Sumarme</button>
+                    `
+                },
                 'patrocinador': {
                     title: '💼 Patrocinador/a',
                     content: `
@@ -2104,39 +2098,38 @@
                     `
                 },
                 'voluntario': {
-                                    title: '🙋 Voluntario/a',
-                                    content: `
-                                        <h3>¿Quiénes pueden ser voluntarios?</h3>
-                                        <ul>
-                                            <li>Colectivos culturales y barriales</li>
-                                            <li>Estudiantes universitarios (trabajo social, tesis)</li>
-                                            <li>Ciudadanía activa con tiempo y compromiso</li>
-                                        </ul>
-                                        <h3>Actividades voluntarias:</h3>
-                                        <ul>
-                                            <li>Apoyo en encuestas y trabajo de campo</li>
-                                            <li>Logística de eventos y ollas comunitarias</li>
-                                            <li>Documentación multimedia (fotos, videos)</li>
-                                        </ul>
-                                        <h3>Agente de los 4 Ases en Campo:</h3>
-                                        <p>Garantiza la Autenticidad de los datos y el Altruismo en las comunidades. Conecta la teoría (NIA/BFR) con la experiencia humana.</p>
-                                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('voluntario')">Quiero ser Voluntario</button>
-                                    `
-                                },
-                
-                                'publico': {
-                                    title: '👥 Público General',
-                                    content: `
-                                        <h3>¿Cómo participar?</h3>
-                                        <ul>
-                                            <li>Respondiendo nuestras encuestas</li>
-                                            <li>Asistiendo a los eventos culturales</li>
-                                            <li>Siguiendo y compartiendo en redes sociales</li>
-                                            <li>Aportando ideas y propuestas</li>
-                                        </ul>
-                                        <a href="https://www.facebook.com/share/g/1A1QZVyuDx/" target="_blank" rel="noopener noreferrer" class="cta-btn" style="margin-top: 1rem; text-decoration: none;">Participar</a>
-                                    `
-                                }
+                    title: '🙋 Voluntario/a',
+                    content: `
+                        <h3>¿Quiénes pueden ser voluntarios?</h3>
+                        <ul>
+                            <li>Colectivos culturales y barriales</li>
+                            <li>Estudiantes universitarios (trabajo social, tesis)</li>
+                            <li>Ciudadanía activa con tiempo y compromiso</li>
+                        </ul>
+                        <h3>Actividades voluntarias:</h3>
+                        <ul>
+                            <li>Apoyo en encuestas y trabajo de campo</li>
+                            <li>Logística de eventos y ollas comunitarias</li>
+                            <li>Documentación multimedia (fotos, videos)</li>
+                        </ul>
+                        <h3>Agente de los 4 Ases en Campo:</h3>
+                        <p>Garantiza la Autenticidad de los datos y el Altruismo en las comunidades. Conecta la teoría (NIA/BFR) con la experiencia humana.</p>
+                        <button class="cta-btn" style="margin-top: 1rem;" onclick="showContactForm('voluntario')">Quiero ser Voluntario</button>
+                    `
+                },
+                'publico': {
+                    title: '👥 Público General',
+                    content: `
+                        <h3>¿Cómo participar?</h3>
+                        <ul>
+                            <li>Respondiendo nuestras encuestas</li>
+                            <li>Asistiendo a los eventos culturales</li>
+                            <li>Siguiendo y compartiendo en redes sociales</li>
+                            <li>Aportando ideas y propuestas</li>
+                        </ul>
+                        <a href="https://www.facebook.com/share/g/1A1QZVyuDx/" target="_blank" rel="noopener noreferrer" class="cta-btn" style="margin-top: 1rem; text-decoration: none;">Participar</a>
+                    `
+                }
             };
 
             const roleData = roles[role];
@@ -2146,20 +2139,19 @@
             `;
             document.getElementById('modal').classList.add('active');
         }
-
         function showContactForm(type) {
-            // URLs de formularios externos - Actualizar con tus URLs reales
             const formURLs = {
                 'investigar': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_INVESTIGADOR/viewform',
-                'patrocinar': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PATROCINIO/viewform',
-                'voluntario': 'https://forms.gle/22rG2MC5QbGV7RME9',  // ✅ ACTIVO
-                'colaborar': 'https://forms.gle/22rG2MC5QbGV7RME9',   // Usa el mismo de voluntario por ahora
+                'patrocinar': 'https://forms.gle/TijvvueFKwc5uncVA',
+                'patrocinador': 'https://forms.gle/TijvvueFKwc5uncVA',
+                'voluntario': 'https://forms.gle/22rG2MC5QbGV7RME9',
+                'colaborar': 'https://forms.gle/22rG2MC5QbGV7RME9',
                 'donar': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_DONACION/viewform',
-                'director': 'https://forms.gle/22rG2MC5QbGV7RME9',    // Usa voluntario por ahora
-                'investigador': 'https://forms.gle/22rG2MC5QbGV7RME9', // Usa voluntario por ahora
-                'analista': 'https://forms.gle/22rG2MC5QbGV7RME9',     // Usa voluntario por ahora
-                'desarrollador': 'https://forms.gle/22rG2MC5QbGV7RME9',// Usa voluntario por ahora
-                'aliado': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_ALIADO/viewform',
+                'director': 'https://forms.gle/22rG2MC5QbGV7RME9',
+                'investigador': 'https://forms.gle/22rG2MC5QbGV7RME9',
+                'analista': 'https://forms.gle/22rG2MC5QbGV7RME9',
+                'desarrollador': 'https://forms.gle/22rG2MC5QbGV7RME9',
+                'aliado': 'https://forms.gle/TijvvueFKwc5uncVA',
                 'publico': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PUBLICO/viewform',
                 'propuesta': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PROPUESTA/viewform'
             };
@@ -2167,6 +2159,7 @@
             const forms = {
                 'investigar': 'Formulario de Investigador/a',
                 'patrocinar': 'Formulario de Patrocinio',
+                'patrocinador': 'Formulario de Patrocinio',
                 'voluntario': 'Formulario de Voluntariado',
                 'colaborar': 'Formulario de Colaboración',
                 'donar': 'Formulario de Donación',
@@ -2178,20 +2171,31 @@
                 'publico': 'Formulario Participación Ciudadana',
                 'propuesta': 'Enviar Propuesta Comunitaria'
             };
-
-            // Opción 1: Usar iframe (cuando tengas URL real)
             if (formURLs[type] && !formURLs[type].includes('TU_FORMULARIO')) {
-                document.getElementById('modal-body').innerHTML = `
-                    <h2>${forms[type]}</h2>
-                    <div class="form-container">
-                        <iframe src="${formURLs[type]}" frameborder="0"></iframe>
-                    </div>
-                    <p style="text-align: center; margin-top: 1rem; color: #666;">
-                        También puedes <a href="${formURLs[type]}" target="_blank" style="color: var(--accent); font-weight: 600;">abrir el formulario en nueva pestaña</a>
-                    </p>
-                `;
+                let content = `<h2>${forms[type]}</h2>`;
+                
+                // Si es un link corto (forms.gle), no se puede incrustar en iframe. Mostramos botón.
+                if (formURLs[type].includes('forms.gle')) {
+                    content += `
+                        <div class="form-container" style="text-align: center; padding: 3rem 1rem; min-height: auto;">
+                            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #555;">Este formulario se abrirá en una ventana segura de Google.</p>
+                            <a href="${formURLs[type]}" target="_blank" class="cta-btn" style="text-decoration: none; background: var(--primary); color: white; padding: 1rem 2rem; border-radius: 30px; display: inline-block;">
+                                📝 Abrir Formulario Ahora
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    content += `
+                        <div class="form-container">
+                            <iframe src="${formURLs[type]}" frameborder="0"></iframe>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: #666;">
+                            ¿No carga? <a href="${formURLs[type]}" target="_blank" style="color: var(--accent); font-weight: 600;">Abrir en nueva pestaña</a>
+                        </p>
+                    `;
+                }
+                document.getElementById('modal-body').innerHTML = content;
             } else {
-                // Opción 2: Formulario temporal HTML (mientras configuras Google Forms)
                 document.getElementById('modal-body').innerHTML = `
                     <h2>${forms[type]}</h2>
                     <p style="margin-bottom: 1.5rem;">¡Gracias por tu interés en DIACUA VIVA!</p>
@@ -2230,21 +2234,17 @@
             }
             document.getElementById('modal').classList.add('active');
         }
-
         function showProposalForm() {
             showContactForm('propuesta');
         }
-
         function handleFormSubmit(event, formType) {
             event.preventDefault();
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             
-            // Aquí puedes integrar con un servicio backend cuando lo tengas
             console.log('Datos del formulario:', data);
             console.log('Tipo:', formType);
             
-            // Por ahora, crear un mailto con la información
             const subject = `DIACUA VIVA - ${formType}`;
             const body = `
 Nombre: ${data.nombre}
@@ -2257,7 +2257,6 @@ Tipo de contacto: ${formType}
             
             const mailtoLink = `mailto:diacuaviva@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
-            // Mostrar confirmación
             document.getElementById('modal-body').innerHTML = `
                 <div style="text-align: center; padding: 2rem;">
                     <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
@@ -2278,15 +2277,11 @@ Tipo de contacto: ${formType}
                 </div>
             `;
         }
-
-        // Close modal on outside click
         document.getElementById('modal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
-
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2299,13 +2294,10 @@ Tipo de contacto: ${formType}
                 }
             });
         });
-
-        // Fade-in on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2314,24 +2306,19 @@ Tipo de contacto: ${formType}
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-in').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
-
-        // Sistema de Filtros para Voluntarios
         function filterProposals(category) {
             const cards = document.querySelectorAll('.volunteer-card');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            // Actualizar botones activos
             buttons.forEach(btn => btn.classList.remove('active'));
             document.querySelector(`[data-filter="${category}"]`).classList.add('active');
             
-            // Filtrar cards
             cards.forEach(card => {
                 if (category === 'todos') {
                     card.style.display = 'block';
@@ -2345,23 +2332,21 @@ Tipo de contacto: ${formType}
                 }
             });
         }
-
-        // Sistema de Modales para Voluntarios
         function openVolunteerModal(volunteerId) {
             document.getElementById('modal-' + volunteerId).style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevenir scroll de fondo
+            document.body.style.overflow = 'hidden';
         }
-
         function closeVolunteerModal(volunteerId) {
             document.getElementById('modal-' + volunteerId).style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-
-        // Cerrar modal al hacer click fuera del contenido
         window.onclick = function(event) {
             if (event.target.classList.contains('volunteer-modal')) {
                 event.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
+            }
+            if (event.target.id === 'donateModal') {
+                closeDonateModal();
             }
         }
     </script>
