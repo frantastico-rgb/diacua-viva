@@ -1118,6 +1118,32 @@
         .whatsapp-menu a:last-child {
             border-bottom: none;
         }
+        /* WhatsApp Bubble */
+        .whatsapp-bubble {
+            position: absolute;
+            bottom: 75px;
+            left: 5px;
+            background: white;
+            padding: 12px;
+            border-radius: 15px 15px 15px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            width: 200px;
+            display: none;
+            z-index: 10000;
+            animation: fadeIn 0.5s;
+            color: #444;
+            line-height: 1.4;
+        }
+        .whatsapp-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 10px;
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: white transparent;
+        }
     </style>
 </head>
 <body>
@@ -2433,11 +2459,15 @@
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-container">
+        <div id="whatsapp-bubble" class="whatsapp-bubble">
+            👋 ¡Hola! ¿Te gustaría sumarte al ecosistema? Elige tu rol aquí abajo.
+            <span style="position:absolute; top:5px; right:8px; cursor:pointer; color:#999; font-size:1.2rem; line-height:0.5;" onclick="closeBubble(event)">&times;</span>
+        </div>
         <div class="whatsapp-menu" id="whatsapp-menu">
-            <a href="https://wa.me/573174247923?text=Hola,%20me%20interesa%20el%20rol%20de%20Investigador%20en%20DIACUA%20VIVA" target="_blank">🔬 Investigador</a>
-            <a href="https://wa.me/573174247923?text=Hola,%20me%20interesa%20el%20rol%20de%20Patrocinador%20en%20DIACUA%20VIVA" target="_blank">💼 Patrocinador</a>
-            <a href="https://wa.me/573174247923?text=Hola,%20quiero%20ser%20Voluntario%20en%20DIACUA%20VIVA" target="_blank">🙋 Voluntario</a>
-            <a href="https://wa.me/573174247923?text=Hola,%20tengo%20una%20consulta%20general%20sobre%20DIACUA%20VIVA" target="_blank">💬 Consulta General</a>
+            <a href="https://wa.me/573246611306?text=Hola,%20me%20interesa%20el%20rol%20de%20Investigador%20en%20DIACUA%20VIVA" target="_blank" onclick="handleWhatsAppClick()">🔬 Investigador</a>
+            <a href="https://wa.me/573246611306?text=Hola,%20me%20interesa%20el%20rol%20de%20Patrocinador%20en%20DIACUA%20VIVA" target="_blank" onclick="handleWhatsAppClick()">💼 Patrocinador</a>
+            <a href="https://wa.me/573246611306?text=Hola,%20quiero%20ser%20Voluntario%20en%20DIACUA%20VIVA" target="_blank" onclick="handleWhatsAppClick()">🙋 Voluntario</a>
+            <a href="https://wa.me/573246611306?text=Hola,%20tengo%20una%20consulta%20general%20sobre%20DIACUA%20VIVA" target="_blank" onclick="handleWhatsAppClick()">💬 Consulta General</a>
         </div>
         <button class="whatsapp-btn" onclick="toggleWhatsApp()" title="Contactar por WhatsApp">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 35px; height: 35px;">
@@ -3143,12 +3173,44 @@ Tipo de contacto: ${formType}
         // WhatsApp Toggle
         function toggleWhatsApp() {
             const menu = document.getElementById('whatsapp-menu');
+            const bubble = document.getElementById('whatsapp-bubble');
             if (menu.style.display === 'flex') {
                 menu.style.display = 'none';
             } else {
                 menu.style.display = 'flex';
+                if (bubble) bubble.style.display = 'none'; // Ocultar burbuja al abrir
             }
         }
+
+        function closeBubble(event) {
+            if (event) event.stopPropagation();
+            const bubble = document.getElementById('whatsapp-bubble');
+            if (bubble) bubble.style.display = 'none';
+        }
+
+        function handleWhatsAppClick() {
+            const menu = document.getElementById('whatsapp-menu');
+            if (menu) menu.style.display = 'none';
+        }
+
+        // Mostrar burbuja después de 5 segundos
+        setTimeout(() => {
+            const bubble = document.getElementById('whatsapp-bubble');
+            const menu = document.getElementById('whatsapp-menu');
+            if (bubble && (!menu || menu.style.display !== 'flex')) {
+                // Personalizar mensaje según hora
+                const hour = new Date().getHours();
+                let greeting = "¡Hola!";
+                if (hour >= 5 && hour < 12) greeting = "¡Buenos días!";
+                else if (hour >= 12 && hour < 19) greeting = "¡Buenas tardes!";
+                else greeting = "¡Buenas noches!";
+
+                bubble.innerHTML = `👋 ${greeting} ¿Te gustaría sumarte al ecosistema? Elige tu rol aquí abajo.
+                <span style="position:absolute; top:5px; right:8px; cursor:pointer; color:#999; font-size:1.2rem; line-height:0.5;" onclick="closeBubble(event)">&times;</span>`;
+                
+                bubble.style.display = 'block';
+            }
+        }, 5000);
     </script>
 </body>
 </html>
