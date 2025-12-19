@@ -895,6 +895,229 @@
             width: 180px;
             color: var(--text);
         }
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px var(--shadow);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .testimonial-slide {
+            display: none;
+            animation: fadeEffect 0.8s;
+        }
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.2rem;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background: rgba(0,0,0,0.05);
+        }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev { left: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.1); }
+        @keyframes fadeEffect {
+            from {opacity: 0.4} to {opacity: 1}
+        }
+        .testimonial-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        /* Sponsors Grid */
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+            margin: 2rem 0;
+        }
+        .sponsor-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .sponsor-img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after { left: -10px; }
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px var(--shadow);
+        }
+        .timeline-content h3 { color: var(--primary); margin-top: 0; }
+        .timeline-date { font-weight: bold; color: var(--accent); margin-bottom: 10px; display: block; }
+        
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+            .left::after, .right::after { left: 21px; }
+            .right { left: 0%; }
+        }
+        /* WhatsApp Widget */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-menu {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            min-width: 200px;
+            animation: slideUp 0.3s;
+        }
+        .whatsapp-menu a {
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            display: block;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .whatsapp-menu a:hover {
+            background: #f0f0f0;
+            color: #25D366;
+        }
+        .whatsapp-menu a:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
@@ -953,15 +1176,15 @@
         <!-- Quick Stats -->
         <div class="stats fade-in">
             <div class="stat-box">
-                <div class="number">800K</div>
+                <div class="number counter" data-target="800" data-suffix="K">0</div>
                 <div class="label">Habitantes</div>
             </div>
             <div class="stat-box">
-                <div class="number">6</div>
+                <div class="number counter" data-target="6">0</div>
                 <div class="label">Meses Investigación</div>
             </div>
             <div class="stat-box">
-                <div class="number">1000+</div>
+                <div class="number counter" data-target="1000" data-suffix="+">0</div>
                 <div class="label">Encuestas</div>
             </div>
             <div class="stat-box">
@@ -1187,6 +1410,48 @@
                             <li>Validación con la comunidad</li>
                             <li>Plan Estratégico Cultural 2026-2030</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hoja de Ruta 2025-2030 -->
+        <section class="fade-in" style="background: #f4f9f4; padding: 3rem 1rem; margin: 2rem 0;">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Hoja de Ruta 2025-2030</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>Diagnóstico y Siembra</h3>
+                        <p>Ejecución de las 1000+ encuestas, grupos focales y aplicación de la Metodología del Árbol. Establecimiento de la línea base (NIA, BFR, TCC).</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026</span>
+                        <h3>Germinación</h3>
+                        <p>Lanzamiento del Plan Estratégico Cultural. Implementación de los primeros "Dispositivos Culturales" piloto en zonas prioritarias.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2027</span>
+                        <h3>Crecimiento del Tronco</h3>
+                        <p>Fortalecimiento institucional. Adopción de políticas públicas basadas en los datos recolectados. Digitalización de trámites culturales.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2028</span>
+                        <h3>Floración</h3>
+                        <p>Consolidación de la Economía Naranja local. Los "Frutos Armónicos" (bienes y servicios) empiezan a exportarse a nivel nacional.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2030</span>
+                        <h3>Cosecha Sostenible</h3>
+                        <p>Villavicencio se posiciona como referente internacional de gestión cultural basada en identidad y datos. Ecosistema autosostenible.</p>
                     </div>
                 </div>
             </div>
@@ -1995,6 +2260,31 @@
             </div>
         </section>
 
+        <!-- Aliados y Patrocinadores -->
+        <section id="aliados" class="fade-in" style="margin: 4rem 0; padding: 2rem; background: #fcfcfc; border-radius: 15px;">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Nuestros Aliados y Patrocinadores</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Organizaciones que creen en el poder transformador de la cultura en Villavicencio.
+            </p>
+            
+            <div class="sponsors-grid">
+                <!-- Logos Reales -->
+                <img src="logo_alcaldia.png" alt="Alcaldía de Villavicencio" class="sponsor-img">
+                <img src="logo_unillanos.png" alt="Universidad de los Llanos" class="sponsor-img">
+                <img src="logo_teopol.png" alt="Teopolítica" class="sponsor-img">
+                <img src="ekine logo 3.png" alt="Ekine" class="sponsor-img">
+                <img src="mini_dominion.png" alt="Dominion Natura" class="sponsor-img">
+                <img src="logo_sena.png" alt="SENA" class="sponsor-img">
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="margin-bottom: 1rem; font-size: 0.95rem; color: #555;">¿Tu marca quiere dejar huella?</p>
+                <button onclick="showRoleModal('patrocinador')" class="cta-btn" style="background: white; color: var(--primary); border: 2px solid var(--primary); font-size: 0.9rem; padding: 0.5rem 1.5rem; cursor: pointer;">
+                    🤝 Conviértete en Aliado
+                </button>
+            </div>
+        </section>
+
         <!-- Call to Action -->
         <section id="accion" class="cta-section fade-in">
             <h2>🚀 ¡Es Momento de Actuar!</h2>
@@ -2140,6 +2430,19 @@
     <button id="blog-toggle-btn" class="blog-toggle-btn" onclick="toggleBlogWidget()">
         <span style="font-size: 1.2rem;">📰</span> Blog
     </button>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-container">
+        <div class="whatsapp-menu" id="whatsapp-menu">
+            <a href="https://wa.me/573174247923?text=Hola,%20me%20interesa%20el%20rol%20de%20Investigador%20en%20DIACUA%20VIVA" target="_blank">🔬 Investigador</a>
+            <a href="https://wa.me/573174247923?text=Hola,%20me%20interesa%20el%20rol%20de%20Patrocinador%20en%20DIACUA%20VIVA" target="_blank">💼 Patrocinador</a>
+            <a href="https://wa.me/573174247923?text=Hola,%20quiero%20ser%20Voluntario%20en%20DIACUA%20VIVA" target="_blank">🙋 Voluntario</a>
+            <a href="https://wa.me/573174247923?text=Hola,%20tengo%20una%20consulta%20general%20sobre%20DIACUA%20VIVA" target="_blank">💬 Consulta General</a>
+        </div>
+        <button class="whatsapp-btn" onclick="toggleWhatsApp()" title="Contactar por WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 35px; height: 35px;">
+        </button>
+    </div>
 
     <!-- JavaScript -->
     <script>
@@ -2408,8 +2711,7 @@
                 'desarrollador': 'https://forms.gle/22rG2MC5QbGV7RME9',
                 'aliado': 'https://forms.gle/TijvvueFKwc5uncVA',
                 'publico': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PUBLICO/viewform',
-                'propuesta': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PROPUESTA/viewform',
-                'testimonio': '' // Usará el formulario manual
+                'propuesta': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PROPUESTA/viewform'
             };
 
             const forms = {
@@ -2425,8 +2727,7 @@
                 'desarrollador': 'Postulación Desarrollador/a',
                 'aliado': 'Formulario Alianza Estratégica',
                 'publico': 'Formulario Participación Ciudadana',
-                'propuesta': 'Enviar Propuesta Comunitaria',
-                'testimonio': 'Deja tu Testimonio'
+                'propuesta': 'Enviar Propuesta Comunitaria'
             };
             if (formURLs[type] && !formURLs[type].includes('TU_FORMULARIO')) {
                 let content = `<h2>${forms[type]}</h2>`;
@@ -2455,12 +2756,11 @@
             } else {
                 document.getElementById('modal-body').innerHTML = `
                     <h2>${forms[type]}</h2>
-                    <p style="margin-bottom: 1.5rem;">${type === 'testimonio' ? 'Tu opinión inspira a otros. ¡Gracias por compartirla!' : '¡Gracias por tu interés en DIACUA VIVA!'}</p>
+                    <p style="margin-bottom: 1.5rem;">¡Gracias por tu interés en DIACUA VIVA!</p>
                     
                     <div style="background: #fff3cd; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid var(--accent);">
-                        ${type === 'testimonio' 
-                            ? '<strong>📝 Nota:</strong> Al enviar, se abrirá tu correo para confirmar el mensaje.' 
-                            : '<strong>📌 Estado:</strong> Formulario en configuración.<br><strong>Por ahora:</strong> Envía tu información a <a href="mailto:diacuaviva@gmail.com" style="color: var(--primary);">diacuaviva@gmail.com</a>'}
+                        <strong>📌 Estado:</strong> Formulario en configuración.<br>
+                        <strong>Por ahora:</strong> Envía tu información a <a href="mailto:diacuaviva@gmail.com" style="color: var(--primary);">diacuaviva@gmail.com</a>
                     </div>
 
                     <form onsubmit="handleFormSubmit(event, '${type}')">
@@ -2477,8 +2777,8 @@
                             <input type="tel" name="telefono" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
                         </div>
                         <div style="margin-bottom: 1rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">${type === 'testimonio' ? 'Tu Testimonio:' : 'Mensaje:'}</label>
-                            <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" placeholder="${type === 'testimonio' ? 'Escribe aquí tu experiencia con DIACUA VIVA...' : 'Cuéntanos sobre tu interés...'}"></textarea>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mensaje:</label>
+                            <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" placeholder="Cuéntanos sobre tu interés, experiencia o propuesta..."></textarea>
                         </div>
                         <button type="submit" class="cta-btn" style="width: 100%;">Enviar Información</button>
                     </form>
@@ -2757,55 +3057,98 @@ Tipo de contacto: ${formType}
 
         // Lógica del Carrusel de Testimonios
         const testimonials = [
-            { text: "DIACUA VIVA nos ha permitido entender que nuestra cultura barrial tiene valor científico. Ya no nos sentimos invisibles.", author: "María González", role: "Líder Comunitaria" },
-            { text: "Por fin una propuesta que une la gestión pública con la realidad de la calle. Los indicadores son lo que necesitábamos.", author: "Carlos Pérez", role: "Gestor Cultural" },
-            { text: "La metodología del árbol nos ayudó a visualizar dónde estaban nuestros problemas de raíz. Es una herramienta poderosa.", author: "Colectivo Juvenil Meta", role: "Voluntarios" }
+            { 
+                text: "DIACUA VIVA nos ha permitido entender que nuestra cultura barrial tiene valor científico. Ya no nos sentimos invisibles.", 
+                author: "María González", 
+                role: "Líder Comunitaria",
+                image: "https://randomuser.me/api/portraits/women/44.jpg",
+                rating: 5
+            },
+            { 
+                text: "Por fin una propuesta que une la gestión pública con la realidad de la calle. Los indicadores son lo que necesitábamos.", 
+                author: "Carlos Pérez", 
+                role: "Gestor Cultural",
+                image: "https://randomuser.me/api/portraits/men/32.jpg",
+                rating: 5
+            },
+            { 
+                text: "La metodología del árbol nos ayudó a visualizar dónde estaban nuestros problemas de raíz. Es una herramienta poderosa.", 
+                author: "Colectivo Juvenil Meta", 
+                role: "Voluntarios",
+                image: "https://randomuser.me/api/portraits/men/85.jpg",
+                rating: 4
+            }
         ];
-
-        let testimonialIndex = 0;
-        let testimonialInterval;
 
         function initTestimonials() {
             const container = document.getElementById('testimonial-container');
             if (!container) return;
 
+            // Renderizar testimonios
             container.innerHTML = testimonials.map((t, i) => `
                 <div class="testimonial-slide" style="display: ${i === 0 ? 'block' : 'none'}">
+                    <img src="${t.image}" alt="${t.author}" class="testimonial-avatar" onerror="this.style.display='none'">
                     <p class="testimonial-text">"${t.text}"</p>
                     <div class="testimonial-author">${t.author}</div>
                     <div class="testimonial-role">${t.role}</div>
+                    <div style="color: #f1c40f; font-size: 1.4rem; margin-top: 0.5rem;">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div>
                 </div>
             `).join('');
 
-            startTestimonialTimer();
-        }
-
-        function plusSlides(n) {
-            showTestimonial(testimonialIndex += n);
-            // Reiniciar el temporizador para que no cambie justo después de que el usuario hizo clic
-            clearInterval(testimonialInterval);
-            startTestimonialTimer();
-        }
-
-        function showTestimonial(n) {
-            const slides = document.getElementsByClassName("testimonial-slide");
-            if (n >= slides.length) { testimonialIndex = 0 }
-            if (n < 0) { testimonialIndex = slides.length - 1 }
+            // Rotación automática cada 5 segundos
+            let slideIndex = 0;
+            const slides = container.getElementsByClassName("testimonial-slide");
             
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[testimonialIndex].style.display = "block";
-        }
-
-        function startTestimonialTimer() {
-            testimonialInterval = setInterval(() => {
-                plusSlides(1);
+            setInterval(() => {
+                slides[slideIndex].style.display = "none";
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].style.display = "block";
             }, 5000);
         }
         
         // Iniciar carrusel
         initTestimonials();
+
+        // Animación de Contadores (Stats)
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        const duration = 2000; // Duración en ms
+                        const increment = target / (duration / 16); // 60 FPS
+
+                        let current = 0;
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.innerText = Math.ceil(current) + suffix;
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target + suffix;
+                            }
+                        };
+                        updateCounter();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) statsObserver.observe(statsSection);
+
+        // WhatsApp Toggle
+        function toggleWhatsApp() {
+            const menu = document.getElementById('whatsapp-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
     </script>
 </body>
 </html>
