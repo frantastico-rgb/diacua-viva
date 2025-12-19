@@ -2136,6 +2136,13 @@
     <!-- JavaScript -->
     <script>
         function openDonateModal() {
+            // GA4: Registrar intención de donación
+            if (typeof gtag === 'function') {
+                gtag('event', 'click', {
+                    'event_category': 'engagement',
+                    'event_label': 'boton_donar'
+                });
+            }
             document.getElementById('donateModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
@@ -2197,6 +2204,14 @@
             document.getElementById('modal').classList.remove('active');
         }
         function showRoleModal(role) {
+            // GA4: Registrar evento de visita a sección de rol
+            if (typeof gtag === 'function') {
+                gtag('event', 'select_content', {
+                    'content_type': 'role_card',
+                    'item_id': role
+                });
+            }
+
             const roles = {
                 'director': {
                     title: '👔 Director del Colectivo',
