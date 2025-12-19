@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIACUA VIVA</title>
+    <title>DIACUA VIVA - Gestión Cultural Villavicencio</title>
+    <meta name="description" content="DIACUA VIVA: Diagnóstico Árbol Cultural para Villavicencio Activa. Plataforma de investigación, monitoreo y gestión cultural para el fortalecimiento de la identidad y sostenibilidad cultural.">
+    <meta name="keywords" content="Villavicencio, Cultura, Gestión Cultural, Investigación, Identidad, Arraigo, Economía Naranja, DIACUA VIVA, Francisco RGB, Meta, Colombia">
+    <meta name="author" content="Francisco RGB - DIACUA VIVA">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DIACUA VIVA - Árbol Cultural para Villavicencio">
+    <meta property="og:description" content="Investigación, monitoreo y gestión cultural con enfoque de arraigo e identidad ancestral para Villavicencio. Súmate al ecosistema.">
+    <meta property="og:image" content="logo.png">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF48DEB9J6"></script>
     <script>
@@ -719,6 +730,171 @@
                 box-sizing: border-box;
             }
         }
+        /* Blog Widget Styles */
+        .blog-widget {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+            z-index: 9998;
+            display: none;
+            overflow: hidden;
+            border: 1px solid #eee;
+            animation: slideUp 0.3s ease;
+            font-family: sans-serif;
+        }
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .blog-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+        }
+        .blog-content {
+            max-height: 350px;
+            overflow-y: auto;
+            padding: 0;
+        }
+        .blog-item {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+        .blog-item:hover {
+            background: #f9f9f9;
+        }
+        .blog-item:last-child {
+            border-bottom: none;
+        }
+        .blog-item h4 {
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .blog-item h4 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .blog-item h4 a:hover {
+            color: var(--accent);
+        }
+        .blog-item .meta {
+            font-size: 0.8rem;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .blog-footer-link {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        .blog-footer-link:hover {
+            background: #e8f5e9;
+        }
+        .blog-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+            z-index: 9998;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+        .blog-toggle-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(45, 80, 22, 0.4);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 480px) {
+            .blog-widget {
+                width: 90%;
+                right: 5%;
+                bottom: 80px;
+            }
+        }
+        /* Search & Back Widgets */
+        .floating-mini-btn {
+            position: fixed;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9997;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        .floating-mini-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .search-bar-container {
+            position: fixed;
+            bottom: 85px;
+            right: 85px;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            display: none;
+            z-index: 9998;
+            border: 1px solid #eee;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-input {
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            width: 180px;
+            color: var(--text);
+        }
     </style>
 </head>
 <body>
@@ -770,7 +946,7 @@
             <a href="#roles" class="nav-pill">Súmate</a>
             <a href="#impacto" class="nav-pill">Impacto</a>
             <a href="#accion" class="nav-pill">Actúa Ahora</a>
-            <a href="https://diacuaviva.blogspot.com/2025/12/cultura-con-tecnologia-y-comunidad.html" target="_blank" rel="noopener noreferrer" class="nav-pill">Blog</a>
+            <a href="https://diacuaviva.blogspot.com/" target="_blank" rel="noopener noreferrer" class="nav-pill">Blog</a>
             <a href="mailto:diacuaviva@gmail.com" class="nav-pill" style="background: var(--accent); color: white;">✉️ Contáctanos</a>
         </div>
 
@@ -1647,6 +1823,22 @@
                             allowfullscreen>
                         </iframe>
                     </div>
+                    
+                    <h3 style="color: var(--primary); margin: 2rem 0 1rem;">San Martillo Cantillo: El martillo que quería ser un pocillo</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Una historia sobre la identidad y la transformación.
+                    </p>
+                    
+                    <!-- Video 4 -->
+                    <div style="margin: 1.5rem 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                            src="https://www.youtube.com/embed/vy6e8NIR_nc" 
+                            title="San Martillo Cantillo" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
 
                     <div class="volunteer-tags" style="margin-top: 2rem;">
                         <span class="badge green">Raíces</span>
@@ -1849,6 +2041,15 @@
             </div>
 
             <div class="footer-section">
+                <h3>Mapa del Sitio</h3>
+                <a href="#">Inicio</a>
+                <a href="#justificacion">Justificación</a>
+                <a href="#propuestas">Expresiones</a>
+                <a href="#accion">Actúa Ahora</a>
+                <a href="https://diacuaviva.blogspot.com/" target="_blank">Blog Oficial</a>
+            </div>
+
+            <div class="footer-section">
                 <h3>Recursos</h3>
                 <a href="#" onclick="alert('Próximamente')">Documentos</a>
                 <a href="#" onclick="alert('Próximamente')">Investigaciones</a>
@@ -1900,6 +2101,37 @@
             <div id="modal-body"></div>
         </div>
     </div>
+
+    <!-- Blog Widget -->
+    <div id="blog-widget" class="blog-widget">
+        <div class="blog-header">
+            <span>📰 Últimas del Blog</span>
+            <button onclick="toggleBlogWidget()">&times;</button>
+        </div>
+        <div id="blog-content" class="blog-content">
+            <div style="padding: 20px; text-align: center; color: #666;">
+                <div style="margin-bottom: 10px; font-size: 1.5rem;">⏳</div>
+                Cargando noticias...
+            </div>
+        </div>
+        <a href="https://diacuaviva.blogspot.com/" target="_blank" class="blog-footer-link">Ver todo el blog →</a>
+    </div>
+
+    <!-- Search Widget -->
+    <div id="search-bar" class="search-bar-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar en la página..." onkeypress="handleSearch(event)">
+        <button onclick="performSearch()" style="background:none; border:none; cursor:pointer; font-size:1.1rem;">🔍</button>
+        <button onclick="clearSearch()" style="background:none; border:none; cursor:pointer; font-size:1.1rem;" title="Borrar búsqueda">🗑️</button>
+        <button onclick="toggleSearch()" style="background:none; border:none; cursor:pointer; color:#999; font-size:1.1rem;">&times;</button>
+    </div>
+    <button class="floating-mini-btn" style="bottom: 85px;" onclick="toggleSearch()" title="Buscar">🔍</button>
+
+    <!-- Back Button -->
+    <button id="back-btn" class="floating-mini-btn" style="bottom: 140px; display: none;" onclick="goBack()" title="Volver">↩️</button>
+
+    <button id="blog-toggle-btn" class="blog-toggle-btn" onclick="toggleBlogWidget()">
+        <span style="font-size: 1.2rem;">📰</span> Blog
+    </button>
 
     <!-- JavaScript -->
     <script>
@@ -2349,6 +2581,153 @@ Tipo de contacto: ${formType}
                 closeDonateModal();
             }
         }
+
+        // Blog Widget Logic
+        function toggleBlogWidget() {
+            const widget = document.getElementById('blog-widget');
+            const btn = document.getElementById('blog-toggle-btn');
+            
+            if (widget.style.display === 'block') {
+                widget.style.display = 'none';
+                btn.innerHTML = '<span style="font-size: 1.2rem;">📰</span> Blog';
+            } else {
+                widget.style.display = 'block';
+                btn.innerHTML = '<span style="font-size: 1.2rem;">✖</span> Cerrar';
+                loadBlogPosts();
+            }
+        }
+
+        let blogLoaded = false;
+        function loadBlogPosts() {
+            if (blogLoaded) return;
+            
+            // Create script tag for JSONP
+            const script = document.createElement('script');
+            script.src = 'https://diacuaviva.blogspot.com/feeds/posts/default?alt=json-in-script&callback=renderBlogPosts&max-results=3';
+            document.body.appendChild(script);
+            blogLoaded = true;
+        }
+
+        function renderBlogPosts(data) {
+            const container = document.getElementById('blog-content');
+            let html = '';
+            
+            if (data.feed && data.feed.entry) {
+                data.feed.entry.forEach(entry => {
+                    const title = entry.title.$t;
+                    // Find the alternate link (the actual post URL)
+                    let link = '#';
+                    if (entry.link) {
+                        for (let i = 0; i < entry.link.length; i++) {
+                            if (entry.link[i].rel === 'alternate') {
+                                link = entry.link[i].href;
+                                break;
+                            }
+                        }
+                    }
+                    // Format date
+                    const dateStr = entry.published.$t;
+                    const date = new Date(dateStr).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+                    
+                    html += `
+                        <div class="blog-item">
+                            <h4><a href="${link}" target="_blank">${title}</a></h4>
+                            <div class="meta">📅 ${date}</div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            } else {
+                container.innerHTML = '<div style="padding: 20px; text-align: center;">No hay entradas recientes.</div>';
+            }
+        }
+
+        // Search & Back Logic
+        let lastScrollPos = null;
+        let searchHighlights = [];
+
+        function toggleSearch() {
+            const bar = document.getElementById('search-bar');
+            if (bar.style.display === 'flex') {
+                bar.style.display = 'none';
+            } else {
+                bar.style.display = 'flex';
+                document.getElementById('search-input').focus();
+            }
+        }
+
+        function handleSearch(e) {
+            if (e.key === 'Enter') performSearch();
+        }
+
+        function performSearch() {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                // Guardar posición antes de saltar para poder volver
+                lastScrollPos = window.scrollY;
+                // Limpiar resaltados anteriores
+                clearSearchHighlights();
+
+                // Intentar búsqueda nativa con wrap-around (circular)
+                // window.find(text, caseSensitive, backwards, wrapAround)
+                const found = window.find && window.find(query, false, false, true);
+                
+                if (!found) {
+                    // Fallback manual: buscar en nodos de texto visibles
+                    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+                    let node;
+                    let manualFound = false;
+                    while(node = walker.nextNode()) {
+                        if (node.parentElement.offsetParent !== null && node.nodeValue.toLowerCase().includes(query.toLowerCase())) {
+                            const el = node.parentElement;
+                            el.scrollIntoView({behavior: 'smooth', block: 'center'});
+                            // Resaltado temporal visual
+                            el.dataset.originalBg = el.style.backgroundColor;
+                            el.style.transition = 'background-color 0.5s';
+                            el.style.backgroundColor = '#fff59d'; // Amarillo suave
+                            searchHighlights.push(el);
+                            manualFound = true;
+                            break;
+                        }
+                    }
+                    if (!manualFound) {
+                        alert('No se encontraron coincidencias.');
+                    }
+                }
+            }
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            if (window.getSelection) { window.getSelection().removeAllRanges(); }
+            clearSearchHighlights();
+        }
+
+        function clearSearchHighlights() {
+            searchHighlights.forEach(el => {
+                el.style.backgroundColor = el.dataset.originalBg || '';
+                delete el.dataset.originalBg;
+            });
+            searchHighlights = [];
+        }
+
+        function goBack() {
+            if (lastScrollPos !== null) {
+                window.scrollTo({top: lastScrollPos, behavior: 'smooth'});
+                lastScrollPos = null;
+            } else {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const backBtn = document.getElementById('back-btn');
+            if (window.scrollY > 300) {
+                backBtn.style.display = 'flex';
+            } else {
+                backBtn.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
