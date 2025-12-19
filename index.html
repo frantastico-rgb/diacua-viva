@@ -1987,6 +1987,14 @@
 
         </div>
 
+        <!-- Testimonios -->
+        <section id="testimonios" class="fade-in" style="margin: 4rem 0;">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Voces del Ecosistema</h2>
+            <div class="testimonial-carousel" id="testimonial-container">
+                <!-- Se llena automáticamente con JS -->
+            </div>
+        </section>
+
         <!-- Call to Action -->
         <section id="accion" class="cta-section fade-in">
             <h2>🚀 ¡Es Momento de Actuar!</h2>
@@ -2400,7 +2408,8 @@
                 'desarrollador': 'https://forms.gle/22rG2MC5QbGV7RME9',
                 'aliado': 'https://forms.gle/TijvvueFKwc5uncVA',
                 'publico': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PUBLICO/viewform',
-                'propuesta': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PROPUESTA/viewform'
+                'propuesta': 'https://docs.google.com/forms/d/e/TU_FORMULARIO_PROPUESTA/viewform',
+                'testimonio': '' // Usará el formulario manual
             };
 
             const forms = {
@@ -2416,7 +2425,8 @@
                 'desarrollador': 'Postulación Desarrollador/a',
                 'aliado': 'Formulario Alianza Estratégica',
                 'publico': 'Formulario Participación Ciudadana',
-                'propuesta': 'Enviar Propuesta Comunitaria'
+                'propuesta': 'Enviar Propuesta Comunitaria',
+                'testimonio': 'Deja tu Testimonio'
             };
             if (formURLs[type] && !formURLs[type].includes('TU_FORMULARIO')) {
                 let content = `<h2>${forms[type]}</h2>`;
@@ -2445,11 +2455,12 @@
             } else {
                 document.getElementById('modal-body').innerHTML = `
                     <h2>${forms[type]}</h2>
-                    <p style="margin-bottom: 1.5rem;">¡Gracias por tu interés en DIACUA VIVA!</p>
+                    <p style="margin-bottom: 1.5rem;">${type === 'testimonio' ? 'Tu opinión inspira a otros. ¡Gracias por compartirla!' : '¡Gracias por tu interés en DIACUA VIVA!'}</p>
                     
                     <div style="background: #fff3cd; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid var(--accent);">
-                        <strong>📌 Estado:</strong> Formulario en configuración.<br>
-                        <strong>Por ahora:</strong> Envía tu información a <a href="mailto:diacuaviva@gmail.com" style="color: var(--primary);">diacuaviva@gmail.com</a>
+                        ${type === 'testimonio' 
+                            ? '<strong>📝 Nota:</strong> Al enviar, se abrirá tu correo para confirmar el mensaje.' 
+                            : '<strong>📌 Estado:</strong> Formulario en configuración.<br><strong>Por ahora:</strong> Envía tu información a <a href="mailto:diacuaviva@gmail.com" style="color: var(--primary);">diacuaviva@gmail.com</a>'}
                     </div>
 
                     <form onsubmit="handleFormSubmit(event, '${type}')">
@@ -2466,8 +2477,8 @@
                             <input type="tel" name="telefono" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
                         </div>
                         <div style="margin-bottom: 1rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mensaje:</label>
-                            <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" placeholder="Cuéntanos sobre tu interés, experiencia o propuesta..."></textarea>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">${type === 'testimonio' ? 'Tu Testimonio:' : 'Mensaje:'}</label>
+                            <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" placeholder="${type === 'testimonio' ? 'Escribe aquí tu experiencia con DIACUA VIVA...' : 'Cuéntanos sobre tu interés...'}"></textarea>
                         </div>
                         <button type="submit" class="cta-btn" style="width: 100%;">Enviar Información</button>
                     </form>
@@ -2743,6 +2754,58 @@ Tipo de contacto: ${formType}
                 backBtn.style.display = 'none';
             }
         });
+
+        // Lógica del Carrusel de Testimonios
+        const testimonials = [
+            { text: "DIACUA VIVA nos ha permitido entender que nuestra cultura barrial tiene valor científico. Ya no nos sentimos invisibles.", author: "María González", role: "Líder Comunitaria" },
+            { text: "Por fin una propuesta que une la gestión pública con la realidad de la calle. Los indicadores son lo que necesitábamos.", author: "Carlos Pérez", role: "Gestor Cultural" },
+            { text: "La metodología del árbol nos ayudó a visualizar dónde estaban nuestros problemas de raíz. Es una herramienta poderosa.", author: "Colectivo Juvenil Meta", role: "Voluntarios" }
+        ];
+
+        let testimonialIndex = 0;
+        let testimonialInterval;
+
+        function initTestimonials() {
+            const container = document.getElementById('testimonial-container');
+            if (!container) return;
+
+            container.innerHTML = testimonials.map((t, i) => `
+                <div class="testimonial-slide" style="display: ${i === 0 ? 'block' : 'none'}">
+                    <p class="testimonial-text">"${t.text}"</p>
+                    <div class="testimonial-author">${t.author}</div>
+                    <div class="testimonial-role">${t.role}</div>
+                </div>
+            `).join('');
+
+            startTestimonialTimer();
+        }
+
+        function plusSlides(n) {
+            showTestimonial(testimonialIndex += n);
+            // Reiniciar el temporizador para que no cambie justo después de que el usuario hizo clic
+            clearInterval(testimonialInterval);
+            startTestimonialTimer();
+        }
+
+        function showTestimonial(n) {
+            const slides = document.getElementsByClassName("testimonial-slide");
+            if (n >= slides.length) { testimonialIndex = 0 }
+            if (n < 0) { testimonialIndex = slides.length - 1 }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[testimonialIndex].style.display = "block";
+        }
+
+        function startTestimonialTimer() {
+            testimonialInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000);
+        }
+        
+        // Iniciar carrusel
+        initTestimonials();
     </script>
 </body>
 </html>
