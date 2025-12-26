@@ -351,7 +351,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.45);
-            z-index: 1000;
+            z-index: 10002;
             justify-content: center;
             align-items: center;
         }
@@ -1144,6 +1144,43 @@
             border-style: solid;
             border-color: white transparent;
         }
+
+        /* Estilos para CTA de Convocatoria con hover */
+        .convocatoria-cta .microcopy {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 120%; /* Posicionar encima del botón */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            border-radius: 8px;
+            padding: 12px;
+            z-index: 10;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .convocatoria-cta:hover .microcopy {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .convocatoria-cta .microcopy::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--dark) transparent transparent transparent;
+        }
     </style>
 </head>
 <body>
@@ -1186,6 +1223,35 @@
         <a href="#proyecto" class="cta-btn" style="font-size: 1.15rem; padding: 0.9rem 2.2rem; background: var(--accent); color: white; border-radius: 30px; text-decoration: none; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Súmate a la comunidad</a>
     </section>
 
+    <!-- Convocatoria Arpas Llaneras Section -->
+    <section class="fade-in" style="max-width: 700px; margin: 2.5rem auto; text-align: center; background: #f9f9f9; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+        <h2 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;">📣 Convocatoria Abierta: Arpas Llaneras</h2>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        
+        <!-- Video Embed -->
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); width: 100%; max-width: 550px;">
+            <iframe src="https://www.youtube.com/embed/h8z0zi-6wsc" title="Convocatoria Arpas Llaneras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 16px;"></iframe>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="convocatoria-cta" style="position: relative; margin-top: 1rem;">
+            <a href="https://forms.gle/L3pivjdBRzEoS7e48" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: var(--accent); color: white; text-decoration: none;">ABORDA EL BUQUE</a>
+            <div class="microcopy">No dejes que el azar se lleve tu talento. Participa por incentivos de hasta $5.000.000 y accede a escenarios a tu medida. El viaje comienza con un clic.</div>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content" style="padding: 1rem; max-width: 850px;">
+            <span class="modal-close" onclick="closeVideoModal()" style="color: #000; font-size: 2.5rem;">&times;</span>
+            <div id="video-modal-body" style="position: relative; padding-bottom: 56.25%; height: 0;">
+                <!-- El Iframe se inyectará aquí -->
+            </div>
+        </div>
+    </div>
+
     <!-- Main Container -->
     <div class="container">
         <!-- Navigation Pills -->
@@ -1195,6 +1261,7 @@
             <a href="#roles" class="nav-pill">Súmate</a>
             <a href="#impacto" class="nav-pill">Impacto</a>
             <a href="#accion" class="nav-pill">Actúa Ahora</a>
+            <a href="#noticias-eventos" id="nav-convocatoria" class="nav-pill">Convocatoria</a>
             <a href="https://diacuaviva.blogspot.com/" target="_blank" rel="noopener noreferrer" class="nav-pill">Blog</a>
             <a href="mailto:diacuaviva@gmail.com" class="nav-pill" style="background: var(--accent); color: white;">✉️ Contáctanos</a>
         </div>
@@ -1549,7 +1616,7 @@
                     </div>
                     <div class="accordion-content" style="text-align: center;">
                         <p style="font-size: 1.1rem; color: #8d4b1c; margin-bottom: 2rem;">La Autenticidad no cabe en un servidor.<br>Esta web es nuestro mapa, pero la fiesta está en la plaza.</p>
-                        <a href="https://www.facebook.com/share/g/19Tbo3z61s/" target="_blank" style="display: inline-block; background: #4267B2; color: white; font-weight: 600; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-size: 1.08rem; margin-bottom: 1.2rem;">Únete a la Conversación Viva en Facebook</a>
+                        <a href="https://www.facebook.com/profile.php?id=61585225436715" target="_blank" style="display: inline-block; background: #4267B2; color: white; font-weight: 600; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-size: 1.08rem; margin-bottom: 1.2rem;">Únete a la Conversación Viva en Facebook</a>
                         <p style="margin-top: 1.2rem; color: #666; font-size: 0.98rem; font-style: italic;">(Donde hasta la Chilindrina se vuelve Centauro indomable)</p>
                     </div>
                 </div>
@@ -1790,7 +1857,7 @@
         </section>
 
         <!-- Secciones Futuras (Expandibles) -->
-        <section class="fade-in">
+        <section id="noticias-eventos" class="fade-in">
             <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Ecosistema Organizacional</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">Secciones en desarrollo para un colectivo sostenible</p>
             <div class="accordion" style="max-width: 900px; margin: 0 auto;">
@@ -1890,19 +1957,46 @@
                         </ul>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" id="accordion-item-noticias">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>📰 Noticias y Eventos</span>
                         <span class="arrow">▼</span>
                     </div>
                     <div class="accordion-content">
-                        <p><strong>Próximamente:</strong></p>
-                        <ul style="padding-left: 2rem;">
-                            <li>Blog de actualidad cultural</li>
-                            <li>Calendario de eventos y convocatorias</li>
-                            <li>Newsletter mensual</li>
-                            <li>Galería multimedia de proyectos</li>
-                            <li>Podcast "Voces del Árbol"</li>
+                        <ul style="padding-left: 2rem; list-style-type: none;">
+                            <li><a href="TERMINOS_DE_REFERENCIA.pdf" target="_blank" rel="noopener noreferrer">📄 Términos de Referencia de la Convocatoria</a></li>
+                            <li style="margin-top: 1rem;"><a href="https://diacuaviva.blogspot.com/" target="_blank" rel="noopener noreferrer">📰 Blog de actualidad cultural</a></li>
+                            <li style="margin-top: 1rem;">
+                                🗓️ Calendario de eventos y convocatorias
+                                <div id="convocatoria-arpas" style="margin-top: 1rem; padding: 1.5rem; background: #fcfcfc; border: 1px solid #eee; border-radius: 10px;">
+                                    <h4 style="color: var(--primary); margin-top: 0; font-size: 1.3rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem;">CONVOCATORIA: ARPAS LLANERAS</h4>
+                                    <p><strong>Oasis de Prototipos: Rutas de Acción DIACUA VIVA.</strong> Hemos diseñado tres rutas maestras para que elijas dónde quieres sembrar tu palabra:</p>
+                                    
+                                    <div style="margin-bottom: 1rem;">
+                                        <h5>1. Ruta de la Resonancia (Eventos de Concurrencia Masiva)</h5>
+                                        <p><strong>Prototipos:</strong> Folclor al Parque, Joropo Relámpago.<br><strong>Propósito:</strong> Conexión cultural pura para el artista que busca el aplauso del pueblo y la visibilidad.</p>
+                                    </div>
+
+                                    <div style="margin-bottom: 1rem;">
+                                        <h5>2. Ruta del Sabor y el Son (Experiencias Sensoriales)</h5>
+                                        <p><strong>Prototipos:</strong> Gastrojoropo, Hayaca Arpista.<br><strong>Propósito:</strong> Fortalecer la identidad culinaria. Aquí el arpa no solo se oye, se degusta.</p>
+                                    </div>
+
+                                    <div>
+                                        <h5>3. Ruta de la Palabra y el Oficio (Formación y Mercado)</h5>
+                                        <p><strong>Prototipos:</strong> Cuentería, Ferias de Arte Llanero, Semilleros.<br><strong>Propósito:</strong> Satisfacer la sed de aprendizaje y la eficiencia económica.</p>
+                                    </div>
+
+                                    <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(230, 126, 34, 0.1); border-left: 4px solid var(--accent); border-radius: 4px; font-style: italic;">"Preinscribirse es el primer paso: el mapa no es el territorio, pero sin mapa no hay destino."</p>
+
+                                    <div style="text-align: center; margin-top: 1.5rem;">
+                                        <a href="https://forms.gle/apzpe6JBQxQhwrJ16" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: var(--accent); color: white; text-decoration: none;">🎶 ABORDA EL BUQUE (Inscripción)</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="margin-top: 1rem;">✉️ Newsletter mensual (Próximamente)</li>
+                            <li style="margin-top: 1rem;">🖼️ Galería multimedia de proyectos (Próximamente)</li>
+                            <li style="margin-top: 1rem;">🎙️ Podcast "Voces del Árbol" (Próximamente)</li>
                         </ul>
                     </div>
                 </div>
@@ -2388,6 +2482,12 @@
             </div>
 
             <div class="footer-section">
+                <h3>Síguenos</h3>
+                <a href="https://www.facebook.com/profile.php?id=61585225436715" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.youtube.com/@DIACUAVIVA" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+
+            <div class="footer-section">
                 <h3>Legal</h3>
                 <a href="#" onclick="alert('Próximamente')">Política de Privacidad</a>
                 <a href="#" onclick="alert('Próximamente')">Términos de Uso</a>
@@ -2547,6 +2647,45 @@
             document.body.style.overflowX = 'auto';
             embed.scrollIntoView({behavior: 'smooth', block: 'center'});
         }
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const videoBody = document.getElementById('video-modal-body');
+            if (!modal || !videoBody) return;
+
+            // Force styles to ensure visibility
+            modal.style.setProperty('display', 'flex', 'important');
+            modal.style.setProperty('position', 'fixed', 'important');
+            modal.style.setProperty('top', '0', 'important');
+            modal.style.setProperty('left', '0', 'important');
+            modal.style.setProperty('width', '100vw', 'important');
+            modal.style.setProperty('height', '100vh', 'important');
+            modal.style.setProperty('background-color', 'rgba(0, 0, 0, 0.7)', 'important');
+            modal.style.setProperty('z-index', '20000', 'important');
+            modal.style.setProperty('opacity', '1', 'important');
+            modal.style.setProperty('visibility', 'visible', 'important');
+
+            videoBody.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px;">
+                </iframe>
+            `;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const videoBody = document.getElementById('video-modal-body');
+            if (!modal || !videoBody) return;
+            
+            videoBody.innerHTML = ''; // Stops the video by removing the iframe
+            modal.style.setProperty('display', 'none', 'important');
+            document.body.style.overflow = 'auto';
+        }
+
         function closeModal() {
             document.getElementById('modal').classList.remove('active');
         }
@@ -2876,7 +3015,45 @@ Tipo de contacto: ${formType}
                 closeModal();
             }
         });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+        // Specific handler for Convocatoria nav link to open accordion
+        const navConvocatoria = document.getElementById('nav-convocatoria');
+        if (navConvocatoria) {
+            navConvocatoria.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const section = document.querySelector('#noticias-eventos');
+                const accordionItem = document.querySelector('#accordion-item-noticias');
+
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                if (accordionItem && !accordionItem.classList.contains('active')) {
+                    // Close all other accordion items first
+                    document.querySelectorAll('.accordion-item.active').forEach(item => {
+                        if (item.id !== 'accordion-item-noticias') {
+                            item.classList.remove('active');
+                        }
+                    });
+                    // Open the target one after a delay for the scroll
+                    setTimeout(() => {
+                        accordionItem.classList.add('active');
+                    }, 500);
+                } else if (accordionItem && accordionItem.classList.contains('active')) {
+                    // If it's already open, just ensure it's scrolled to
+                     section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+
+        // Generic smooth-scroll for all other hash links
+        document.querySelectorAll('a[href^="#"]:not(#nav-convocatoria)').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
