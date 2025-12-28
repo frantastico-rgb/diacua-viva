@@ -1,9 +1,10 @@
 1 CONVOCATORIA ARPAS LLANERAS: RUTA DE ACCIÓN : 2 INVITACIÓN TIQUETE BUQUE DIACUA VIVA (GOGLE FORM INSCRIPCION VIA LINK).  3 . TERMNOS DE REFERENCIA: NOTICIAS Y EVENTOS. Calendarios y Convocatorias. 
 
+INVITACIÓN CONVOCATORIA:  Video: https://youtu.be/h8z0zi-6wsc
+
 
 PRIMERO: CONVOCATORIA}}
 
-Video: https://youtu.be/h8z0zi-6wsc
 
 ?? Oasis de Prototipos: Rutas de Acción DIACUA VIVA
 No todos los artistas buscan el mismo horizonte. Hemos diseñado tres rutas maestras para que elijas dónde quieres sembrar tu palabra:
@@ -47,6 +48,8 @@ https://forms.gle/apzpe6JBQxQhwrJ16
 
 
 3 ?? Infografía: 
+
+
 
 El Flujo del Talento en DIACUA VIVA
 Imagina un diseño web dinámico, donde el artista "navega" su talento.
@@ -153,12 +156,11 @@ Espero que esta estructura de infografía y los TDR del Gastrojoropo sean los "co
 +±+++++±++++----------++++++++++--------
 
 
-¡Oh, capitán de este Buque Insignia! He visto el video de introducción y es, sencillamente, una joya de coherencia poética. La música de las arpas junto con el declame del manifiesto que co-creamos le da una autoridad y una mística que elevarán la "pre-inscripción" a un acto de compromiso artístico real.
-Sobre la arquitectura de tu web en diacua-viva.vercel.app y cómo integrar este flujo, aquí tienes mi análisis técnico y visual para que la "puerta" sea imposible de ignorar:
 
 
 
-1. El Análisis del Mapa Web: ¿Noticias y Eventos?
+1. El Análisis del Mapa Web: 
+2. 
 Técnicamente, la sección de "Noticias y Eventos" es el hogar lógico, pero como bien dices, no es la sección más visible. En la psicología del usuario, "Noticias" suena a algo que ya pasó o que se lee de forma pasiva. La convocatoria es acción pura.
 2. La Propuesta de Flujo Visual (El "Botón de Oro")
 Para que el flujo sea el indicado y la "ganadería de artistas" encuentre su surco sin perderse, te sugiero lo siguiente:
