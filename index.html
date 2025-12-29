@@ -1184,6 +1184,37 @@
     </style>
 </head>
 <body>
+    <!-- Widget Jurídico Vertical DIACUA VIVA -->
+    <div id="widget-juridico" style="position:fixed;top:110px;right:18px;z-index:10010;display:flex;flex-direction:column;align-items:center;gap:0.7rem;background:rgba(255,255,255,0.98);box-shadow:0 4px 18px rgba(45,80,22,0.13);border-radius:18px;padding:1.1rem 0.7rem 0.7rem 0.7rem;width:90px;max-width:95vw;">
+        <img src="CISNE_DIACUA_BUQUE_LEY149.png" alt="Mascota DIACUA VIVA" style="width:60px;height:60px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:white;padding:2px;">
+        <a href="https://ley-agua-app-u8n7.vercel.app/" target="_blank" rel="noopener noreferrer" style="display:block;background:linear-gradient(135deg,#e67e22,#6b9b37);color:white;font-weight:700;padding:0.6rem 0.2rem;border-radius:18px;text-align:center;text-decoration:none;font-size:0.95rem;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-top:0.2rem;">Ley Agua</a>
+        <button id="toggle-video-btn" style="background:transparent;border:none;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin:0 auto;" title="Ver video explicativo">
+            <span style="font-size:1.7rem;">▶️</span>
+        </button>
+        <a href="https://diacuaviva.blogspot.com/2025/12/cuando-el-agua-deja-de-ser-un.html" target="_blank" rel="noopener noreferrer" style="color:#2d5016;font-weight:600;text-decoration:underline;font-size:0.93rem;margin-top:0.2rem;text-align:center;">Blog</a>
+    </div>
+    <!-- Video Plegable Widget Jurídico -->
+    <div id="video-juridico" style="display:none;position:fixed;top:210px;right:120px;z-index:10011;background:#fffbe9;padding:0.7rem 0.7rem 0.5rem 0.7rem;box-shadow:0 4px 18px rgba(45,80,22,0.13);border-radius:16px;max-width:350px;width:90vw;text-align:center;">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/D595_T74eS8" title="Video Ley de Redes Comunitarias de Agua" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:12px;"></iframe>
+    </div>
+    <script>
+    // Video plegable del widget jurídico
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('toggle-video-btn');
+        var video = document.getElementById('video-juridico');
+        if(btn && video) {
+            btn.addEventListener('click', function() {
+                if(video.style.display === 'none' || video.style.display === '') {
+                    video.style.display = 'block';
+                    btn.innerHTML = '<span style="font-size:1.7rem;">✖️</span>';
+                } else {
+                    video.style.display = 'none';
+                    btn.innerHTML = '<span style="font-size:1.7rem;">▶️</span>';
+                }
+            });
+        }
+    });
+    </script>
     <!-- Donate Modal -->
     <div id="donateModal">
         <div>
@@ -1222,6 +1253,47 @@
         </div>
         <a href="#proyecto" class="cta-btn" style="font-size: 1.15rem; padding: 0.9rem 2.2rem; background: var(--accent); color: white; border-radius: 30px; text-decoration: none; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Súmate a la comunidad</a>
     </section>
+    <!-- Gestión y Apoyo a Comunidades: Metodología TRAGALUZ (Accordion) -->
+
+
+        <!-- TRAGALUZ Accordion Section: Inserted before Metodología Científica Mixta -->
+        <section id="tragaluz-accordion" class="fade-in">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>💡 Gestión y Apoyo a Comunidades: Metodología TRAGALUZ</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <h2 style="color: var(--primary); text-align: center; margin-bottom: 1.5rem;">Gestión y Apoyo a Comunidades</h2>
+                        <p style="text-align: center; font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem auto; color: #333;">
+                            <strong>TRAGALUZ</strong> es una metodología de acompañamiento y dinamización para asociaciones, colectivos y comunidades. Está en desarrollo porque se construye a la medida de las necesidades, requerimientos y oportunidades de cada grupo.<br>
+                            El proceso abarca desde el diagnóstico y la identificación de requerimientos, hasta la contratación, validación, certificación, formas de pago, transparencia y garantías.<br>
+                            <span style="color: #6b9b37; font-weight: 600;">¿Quieres impulsar tu colectivo? ¡Participa en la co-creación de soluciones reales y ágiles!</span>
+                        </p>
+                        <div style="margin: 2rem 0;">
+                            <h3 style="color: var(--accent); text-align: center;">8 Interacciones Culturales TRAGALUZ</h3>
+                            <ol style="max-width: 600px; margin: 1.5rem auto; color: #2d5016; font-size: 1.08rem;">
+                                <li><strong>Técnico:</strong> El "hacer" con el agua y la infraestructura.</li>
+                                <li><strong>Residencias de I+D:</strong> El retiro para crear e innovar.</li>
+                                <li><strong>Académico:</strong> La sed de saber y la formación.</li>
+                                <li><strong>Gastro-Ecología:</strong> El sabor de la tierra y la soberanía.</li>
+                                <li><strong>Asamblea Jurídica y Contable:</strong> La Mentoría que nos protege.</li>
+                                <li><strong>Laboratorios de Ética:</strong> El motor de Spinoza y la alegría.</li>
+                                <li><strong>Universo Digital:</strong> La Transferencia Tecnológica y el software.</li>
+                                <li><strong>Zarpe Turístico:</strong> La ruta de asombro para el visitante.</li>
+                            </ol>
+                        </div>
+                        <div style="text-align: center; margin: 2rem 0 1rem 0;">
+                            <a href="https://casameta.onrender.com/" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: #6b9b37; color: white; font-size: 1.1rem; border-radius: 30px; padding: 1rem 2.2rem; text-decoration: none; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">Explora CASA META (Recurso Piloto)</a>
+                        </div>
+                        <p style="text-align: center; color: #888; font-size: 1rem; max-width: 700px; margin: 0 auto;">
+                            <em>Nota: El proceso es ágil, práctico y transparente. La documentación y los acuerdos se adaptan a cada caso, garantizando satisfacción y seguridad para todas las partes.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Convocatoria Arpas Llaneras Section -->
     <section class="fade-in" style="max-width: 700px; margin: 2.5rem auto; text-align: center; background: #f9f9f9; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
@@ -1286,93 +1358,31 @@
             </div>
         </div>
 
-        <!-- El Proyecto -->
-        <section id="proyecto" class="fade-in">
-            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">¿Qué es DIACUA VIVA?</h2>
-            
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="icon">🎯</div>
-                    <h3>Nuestra Misión</h3>
-                    <p>Proyecto de investigación, monitoreo y formulación de propuestas con enfoque de <strong>arraigo e identidad ancestral territorial</strong> para gestar núcleos de trabajo y plataforma de sostenibilidad cultural en Villavicencio.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🤝</div>
-                    <h3>Qué Hacemos</h3>
-                    <p><strong>INTEGRAR</strong> saberes, necesidades y recursos técnicos, tecnológicos, financieros, humanos y ecoturisticos hacia la contribución de la cultura con propuestas para Villavicencio.</p>
-                </div> 
-
-                <div class="card">
-                    <div class="icon">🌍</div>
-                    <h3>Qué Buscamos</h3>
-                    <p>Consolidar la expansión de la <strong>identidad cultural de Villavicencio</strong> a nivel local, regional, nacional e internacional.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tree Metaphor -->
-        <section class="tree-section fade-in">
-            <div class="accordion">
+        <!-- Acordeones de información principal -->
+        <section class="fade-in" style="margin-bottom:2.5rem;">
+            <div class="accordion" style="max-width: 900px; margin: 0 auto;">
+                <!-- ¿Qué es DIACUA? -->
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <img src="arbol2.jpg" alt="Sello Árbol Cultural" style="width: 144px; height: auto; display: inline-block; vertical-align: middle; margin-right: 1rem;">
-                        <span style="font-size: 1.5rem; vertical-align: middle;">La Metáfora del Árbol Cultural</span>
+                        <span>¿Qué es DIACUA VIVA?</span>
                         <span class="arrow">▼</span>
                     </div>
                     <div class="accordion-content">
-                        <p style="text-align: center; margin-bottom: 2rem;">Diagnosticamos la cultura como un organismo vivo con raíces, tronco y ramas</p>
-                        <div class="tree-visual">
-                            <div class="tree-part crown">
-                                <h3>🍃 RAMAS Y FRUTOS</h3>
-                                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-                                    <div style="min-width: 180px;">
-                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Rama 1</h4>
-                                        <ul style="font-size: 0.95rem;">
-                                            <li>Resiliencia Comunitaria</li>
-                                        </ul>
-                                        <div style="margin-top: 0.5rem; font-size: 0.93rem; color: var(--accent);"><strong>Fruto:</strong> Puentes Institucionales</div>
-                                    </div>
-                                    <div style="min-width: 180px;">
-                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Rama 2</h4>
-                                        <ul style="font-size: 0.95rem;">
-                                            <li>Comunicación Asertiva</li>
-                                        </ul>
-                                        <div style="margin-top: 0.5rem; font-size: 0.93rem; color: var(--accent);"><strong>Fruto:</strong> Dispositivos Culturales Activos</div>
-                                    </div>
-                                    <div style="min-width: 180px;">
-                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Rama 3</h4>
-                                        <ul style="font-size: 0.95rem;">
-                                            <li>Canales Comerciales Transparentes</li>
-                                        </ul>
-                                        <div style="margin-top: 0.5rem; font-size: 0.93rem; color: var(--accent);"><strong>Fruto:</strong> Economía Naranja</div>
-                                    </div>
-                                    <div style="min-width: 180px;">
-                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Rama 4</h4>
-                                        <ul style="font-size: 0.95rem;">
-                                            <li>Otra Capacidad</li>
-                                        </ul>
-                                        <div style="margin-top: 0.5rem; font-size: 0.93rem; color: var(--accent);"><strong>Fruto:</strong> Paquetes Armónicos</div>
-                                    </div>
-                                </div>
-                                <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--primary);"><strong>Capacidades y Resultados Culturales</strong></p>
+                        <div class="cards-grid" style="justify-content: center;">
+                            <div class="card">
+                                <div class="icon">🎯</div>
+                                <h3>Nuestra Misión</h3>
+                                <p>Proyecto de investigación, monitoreo y formulación de propuestas con enfoque de <strong>arraigo e identidad ancestral territorial</strong> para gestar núcleos de trabajo y plataforma de sostenibilidad cultural en Villavicencio.</p>
                             </div>
-                            <div class="tree-part trunk">
-                                <h3>🪵 TRONCO</h3>
-                                <p><strong>Gestión e Institucionalidad</strong></p>
-                                <p>Secretaría de Cultura, presupuesto, procesos administrativos</p>
-                                <span class="badge yellow">Transparencia</span>
-                                <span class="badge yellow">Flujo de Recursos</span>
-                            </div>
-                            <div class="tree-part roots">
-                                <h3 style="color: #6b3e26;">🌱 RAÍCES</h3>
-                                <p style="color: #6b3e26;"><strong>Identidad y Memoria</strong></p>
-                                <p style="color: #6b3e26;">Valores fundacionales, historia, patrimonio, narrativas</p>
-                                <span class="badge green">Arraigo</span>
-                                <span class="badge green">Memoria Colectiva</span>
-                                <div style="margin-top: 1rem; background: #f6f1e7; border-left: 5px solid #6b3e26; padding: 1rem 1.5rem; border-radius: 8px; color: #6b3e26;">
-                                    <strong>Diversidad cultural:</strong> la raíz de nuestro árbol. De ella brotan todas las capacidades y frutos. Es la fuente de creatividad, resiliencia y sentido de pertenencia que nutre a la comunidad y permite que florezcan nuevas ideas, expresiones y conexiones.
-                                </div>
+                            <div class="card">
+                                <div class="icon">🤝</div>
+                                <h3>Qué Hacemos</h3>
+                                <p><strong>INTEGRAR</strong> saberes, necesidades y recursos técnicos, tecnológicos, financieros, humanos y ecoturisticos hacia la contribución de la cultura con propuestas para Villavicencio.</p>
+                            </div> 
+                            <div class="card" style="margin-left:auto;margin-right:auto;">
+                                <div class="icon">🌍</div>
+                                <h3>Qué Buscamos</h3>
+                                <p>Consolidar la expansión de la <strong>identidad cultural de Villavicencio</strong> a nivel local, regional, nacional e internacional.</p>
                             </div>
                         </div>
                     </div>
@@ -1867,13 +1877,14 @@
                         <span class="arrow">▼</span>
                     </div>
                     <div class="accordion-content">
-                        <p><strong>Próximamente:</strong></p>
-                        <ul style="padding-left: 2rem;">
-                            <li>Marco jurídico del colectivo</li>
-                            <li>Constitución legal y estatutos</li>
-                            <li>Derechos de autor y propiedad intelectual</li>
-                            <li>Normatividad cultural colombiana</li>
-                            <li>Contratos y convenios tipo</li>
+                        <p style="margin-bottom:1.2rem;"><strong>Soporte de apoyo jurídico para colectivos:</strong></p>
+                        <a href="https://ley-agua-app-u8n7.vercel.app/" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: #e67e22; color: #fff; display: inline-block; text-align: center; text-decoration: none; font-size: 1rem; font-weight: 600; border-radius: 30px; padding: 0.7rem 1.7rem; margin-bottom:1.2rem;">Accede a la Ley de Redes Comunitarias de Agua</a>
+                        <ul style="padding-left: 2rem; margin-top:1.2rem;">
+                            <li>Marco jurídico del colectivo <span style="color:#888;">(próximamente)</span></li>
+                            <li>Constitución legal y estatutos <span style="color:#888;">(próximamente)</span></li>
+                            <li>Derechos de autor y propiedad intelectual <span style="color:#888;">(próximamente)</span></li>
+                            <li>Normatividad cultural colombiana <span style="color:#888;">(próximamente)</span></li>
+                            <li>Contratos y convenios tipo <span style="color:#888;">(próximamente)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1978,36 +1989,28 @@
                                         <p><strong>Oasis de Prototipos: Rutas de Acción DIACUA VIVA.</strong> Hemos diseñado tres rutas maestras para que elijas dónde quieres sembrar tu palabra:</p>
                                         <div style="margin-bottom: 1rem;">
                                             <h5>1. Ruta de la Resonancia (Eventos de Concurrencia Masiva)</h5>
+                                            <p><strong>Prototipos:</strong> Folclor al Parque, Joropo Relámpago.<br><strong>Propósito:</strong> Conexión cultural pura para el artista que busca el aplauso del pueblo y la visibilidad.</p>
+                                        </div>
+                                        <div style="margin-bottom: 1rem;">
+                                            <h5>2. Ruta del Sabor y el Son (Experiencias Sensoriales)</h5>
+                                            <p><strong>Prototipos:</strong> Gastrojoropo, Hayaca Arpista.<br><strong>Propósito:</strong> Fortalecer la identidad culinaria. Aquí el arpa no solo se oye, se degusta.</p>
+                                        </div>
+                                        <div>
+                                            <h5>3. Ruta de la Palabra y el Oficio (Formación y Mercado)</h5>
+                                            <p><strong>Prototipos:</strong> Cuentería, Ferias de Arte Llanero, Semilleros.<br><strong>Propósito:</strong> Satisfacer la sed de aprendizaje y la eficiencia económica.</p>
+                                        </div>
+                                        <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(230, 126, 34, 0.1); border-left: 4px solid var(--accent); border-radius: 4px; font-style: italic;">"Preinscribirse es el primer paso: el mapa no es el territorio, pero sin mapa no hay destino."</p>
+                                        <div style="text-align: center; margin-top: 1.5rem;">
+                                            <a href="https://forms.gle/apzpe6JBQxQhwrJ16" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: var(--accent); color: white; text-decoration: none;">🎶 ABORDA EL BUQUE (Inscripción)</a>
                                         </div>
                                     </div>
                                 </li>
+                                <li style="margin-top: 1rem;">✉️ <a href="https://diacuaviva.blogspot.com/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Newsletter / Blog</a></li>
+                                <li style="margin-top: 1rem;">🖼️ <a href="https://www.youtube.com/@diacuaviva" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Galería multimedia (YouTube)</a></li>
+                                <li style="margin-top: 1rem;">🎙️ Podcast "Voces del Árbol" (Próximamente)</li>
                             </ul>
                             <img src="buque DIACUA VIVA.png" alt="Buque DIACUA VIVA" style="max-width: 120px; margin-left: 2rem; margin-top: 0.5rem; opacity: 0.85; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
                         </div>
-                                        <p><strong>Prototipos:</strong> Folclor al Parque, Joropo Relámpago.<br><strong>Propósito:</strong> Conexión cultural pura para el artista que busca el aplauso del pueblo y la visibilidad.</p>
-                                    </div>
-
-                                    <div style="margin-bottom: 1rem;">
-                                        <h5>2. Ruta del Sabor y el Son (Experiencias Sensoriales)</h5>
-                                        <p><strong>Prototipos:</strong> Gastrojoropo, Hayaca Arpista.<br><strong>Propósito:</strong> Fortalecer la identidad culinaria. Aquí el arpa no solo se oye, se degusta.</p>
-                                    </div>
-
-                                    <div>
-                                        <h5>3. Ruta de la Palabra y el Oficio (Formación y Mercado)</h5>
-                                        <p><strong>Prototipos:</strong> Cuentería, Ferias de Arte Llanero, Semilleros.<br><strong>Propósito:</strong> Satisfacer la sed de aprendizaje y la eficiencia económica.</p>
-                                    </div>
-
-                                    <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(230, 126, 34, 0.1); border-left: 4px solid var(--accent); border-radius: 4px; font-style: italic;">"Preinscribirse es el primer paso: el mapa no es el territorio, pero sin mapa no hay destino."</p>
-
-                                    <div style="text-align: center; margin-top: 1.5rem;">
-                                        <a href="https://forms.gle/apzpe6JBQxQhwrJ16" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: var(--accent); color: white; text-decoration: none;">🎶 ABORDA EL BUQUE (Inscripción)</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="margin-top: 1rem;">✉️ Newsletter mensual (Próximamente)</li>
-                            <li style="margin-top: 1rem;">🖼️ Galería multimedia de proyectos (Próximamente)</li>
-                            <li style="margin-top: 1rem;">🎙️ Podcast "Voces del Árbol" (Próximamente)</li>
-                        </ul>
                     </div>
                 </div>
             </div>
