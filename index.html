@@ -16,13 +16,19 @@
     <meta property="og:image" content="logo.png">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF48DEB9J6"></script>
-    <script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RF48DEB9J6"></script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-RF48DEB9J6');
     </script>
+    <!-- Ejemplo de uso de CDN ficticio para recursos estáticos -->
+    <!-- Antes: <link rel="stylesheet" href="/css/estilos.css"> -->
+    <link rel="stylesheet" href="https://cdn.ejemplo.com/css/estilos.min.css">
+    <!-- Antes: <script src="/js/app.js" defer></script> -->
+    <script src="https://cdn.ejemplo.com/js/app.min.js" defer></script>
+    <!-- Así, los recursos se sirven desde el CDN y no desde tu servidor principal -->
     <style>
                 @media (max-width: 600px) {
                     /* Reduce el video y el banner un 10% en móviles */
@@ -1201,7 +1207,7 @@
 <body>
     <!-- Widget Jurídico Vertical DIACUA VIVA -->
     <div id="widget-juridico" style="position:fixed;top:110px;right:18px;z-index:10010;display:flex;flex-direction:column;align-items:center;gap:0.7rem;background:rgba(255,255,255,0.98);box-shadow:0 4px 18px rgba(45,80,22,0.13);border-radius:18px;padding:1.1rem 0.7rem 0.7rem 0.7rem;width:90px;max-width:95vw;">
-        <img src="CISNE_DIACUA_BUQUE_LEY149.png" alt="Mascota DIACUA VIVA" style="width:60px;height:60px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:white;padding:2px;">
+        <img src="CISNE_DIACUA_BUQUE_LEY149.png" alt="Mascota DIACUA VIVA" style="width:60px;height:60px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:white;padding:2px;" loading="lazy">
         <a href="https://ley-agua-app-u8n7.vercel.app/" target="_blank" rel="noopener noreferrer" style="display:block;background:linear-gradient(135deg,#e67e22,#6b9b37);color:white;font-weight:700;padding:0.6rem 0.2rem;border-radius:18px;text-align:center;text-decoration:none;font-size:0.95rem;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-top:0.2rem;">Ley Agua</a>
         <button id="toggle-video-btn" style="background:transparent;border:none;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin:0 auto;" title="Ver video explicativo">
             <span style="font-size:1.7rem;">▶️</span>
@@ -1210,7 +1216,7 @@
     </div>
     <!-- Video Plegable Widget Jurídico -->
     <div id="video-juridico" style="display:none;position:fixed;top:210px;right:120px;z-index:10011;background:#fffbe9;padding:0.7rem 0.7rem 0.5rem 0.7rem;box-shadow:0 4px 18px rgba(45,80,22,0.13);border-radius:16px;max-width:350px;width:90vw;text-align:center;">
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/D595_T74eS8" title="Video Ley de Redes Comunitarias de Agua" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:12px;"></iframe>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/D595_T74eS8" title="Video Ley de Redes Comunitarias de Agua" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:12px;" loading="lazy"></iframe>
     </div>
     <script>
     // Video plegable del widget jurídico
@@ -1236,7 +1242,7 @@
             <button onclick="closeDonateModal()" style="position: absolute; top: 1.1rem; right: 1.1rem; background: none; border: none; font-size: 1.7rem; color: #e67e22; cursor: pointer;">&times;</button>
             <h3 style="color: #e67e22; margin-bottom: 1.2rem;">Apoya la Cultura</h3>
             <p style="color: #444; font-size: 1.05rem; margin-bottom: 1.2rem;">Puedes donar a través de nuestra cuenta o usando el código QR. ¡Gracias por tu apoyo!</p>
-            <img src="davi_plata.png" alt="DaviPlata" style="width: 120px; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-radius: 10px;">
+            <img src="davi_plata.png" alt="DaviPlata" style="width: 120px; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-radius: 10px;" loading="lazy">
             <div style="margin: 1.2rem 0;">
                 <button onclick="copyAccount()" style="background: #27ae60; color: #fff; border: none; border-radius: 20px; padding: 0.7rem 2rem; font-size: 1.08rem; cursor: pointer; font-weight: 600;">Copiar número</button>
             </div>
@@ -1248,7 +1254,7 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="logo-container">
-            <video class="video-logo" autoplay loop muted playsinline>
+            <video class="video-logo" autoplay loop muted playsinline poster="logo.png" preload="none">
                 <source src="DIACUA VIV.mp4" type="video/mp4">
                 Tu navegador no soporta el video.
             </video>
@@ -1264,7 +1270,7 @@
     <section class="fade-in" style="max-width: 700px; margin: 2.5rem auto 0 auto; text-align: center;">
         <h2 style="color: var(--primary); margin-bottom: 1rem; font-size: 2rem;">Conoce DIACUA VIVA en 45 segundos</h2>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-bottom: 1.5rem;">
-            <iframe src="https://www.youtube.com/embed/b8nsbrPHlrY" title="DIACUA VIVA INTRODUCCION" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 16px;"></iframe>
+            <iframe src="https://www.youtube.com/embed/b8nsbrPHlrY" title="DIACUA VIVA INTRODUCCION" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 16px;" loading="lazy"></iframe>
         </div>
         <a href="https://forms.gle/63a4PoAfJG5AuG5GA" class="cta-btn" style="font-size: 1.15rem; padding: 0.9rem 2.2rem; background: var(--accent); color: white; border-radius: 30px; text-decoration: none; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;" target="_blank" rel="noopener noreferrer">Súmate a la comunidad</a>
     </section>
@@ -1319,7 +1325,7 @@
         
         <!-- Video Embed -->
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); width: 100%; max-width: 550px;">
-            <iframe src="https://www.youtube.com/embed/h8z0zi-6wsc" title="Convocatoria Arpas Llaneras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 16px;"></iframe>
+            <iframe src="https://www.youtube.com/embed/h8z0zi-6wsc" title="Convocatoria Arpas Llaneras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 16px;" loading="lazy"></iframe>
         </div>
 
         <!-- CTA Button -->
@@ -2025,7 +2031,7 @@
                                 <li style="margin-top: 1rem;">🖼️ <a href="https://www.youtube.com/@diacuaviva" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Galería multimedia (YouTube)</a></li>
                                 <li style="margin-top: 1rem;">🎙️ Podcast "Voces del Árbol" (Próximamente)</li>
                             </ul>
-                            <img src="buque DIACUA VIVA.png" alt="Buque DIACUA VIVA" style="max-width: 120px; margin-left: 2rem; margin-top: 0.5rem; opacity: 0.85; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
+                            <img src="buque DIACUA VIVA.png" alt="Buque DIACUA VIVA" style="max-width: 120px; margin-left: 2rem; margin-top: 0.5rem; opacity: 0.85; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -2417,20 +2423,20 @@
             
             <div class="sponsors-grid">
                 <!-- Logos Reales -->
-                <img src="logo nexus.png" alt="neus lab gestion digital" class="sponsor-img">
-                <img src="logo_alcaldia.png" alt="Alcaldía de Villavicencio" class="sponsor-img">
-                <img src="logo slb.png" alt="slb mapa global Stipulation Logic Business" class="sponsor-img">
-                <img src="logo_unillanos.png" alt="Universidad de los Llanos" class="sponsor-img">
-                <img src="logo_casa_meta.png" alt="Casa Meta" class="sponsor-img">
-                <img src="logo innova manager.png" alt="innova manager" class="sponsor-img">
-                 <img src="logo_gobernación.png" alt="Gobernación del Meta" class="sponsor-img">
-                <img src="logo_teopol.png" alt="Teopolítica" class="sponsor-img">
-                <img src="ekine logo 3.png" alt="Ekine" class="sponsor-img">
-                <img src="mini_dominion.png" alt="Dominion Natura" class="sponsor-img">
-                <img src="logo_sena.png" alt="SENA" class="sponsor-img">
-                <img src="log_passio_vertice.png" alt="passio Vertice" class="sponsor-img">
+                <img src="logo nexus.png" alt="neus lab gestion digital" class="sponsor-img" loading="lazy">
+                <img src="logo_alcaldia.png" alt="Alcaldía de Villavicencio" class="sponsor-img" loading="lazy">
+                <img src="logo slb.png" alt="slb mapa global Stipulation Logic Business" class="sponsor-img" loading="lazy">
+                <img src="logo_unillanos.png" alt="Universidad de los Llanos" class="sponsor-img" loading="lazy">
+                <img src="logo_casa_meta.png" alt="Casa Meta" class="sponsor-img" loading="lazy">
+                <img src="logo innova manager.png" alt="innova manager" class="sponsor-img" loading="lazy">
+                 <img src="logo_gobernación.png" alt="Gobernación del Meta" class="sponsor-img" loading="lazy">
+                <img src="logo_teopol.png" alt="Teopolítica" class="sponsor-img" loading="lazy">
+                <img src="ekine logo 3.png" alt="Ekine" class="sponsor-img" loading="lazy">
+                <img src="mini_dominion.png" alt="Dominion Natura" class="sponsor-img" loading="lazy">
+                <img src="logo_sena.png" alt="SENA" class="sponsor-img" loading="lazy">
+                <img src="log_passio_vertice.png" alt="passio Vertice" class="sponsor-img" loading="lazy">
                     <div style="grid-column: 1 / -1; display: flex; justify-content: center;">
-                        <img src="logo_fundacyt.png" alt="logo_fundacyt" class="sponsor-img">
+                        <img src="logo_fundacyt.png" alt="logo_fundacyt" class="sponsor-img" loading="lazy">
                     </div>
             </div>
 
@@ -2463,7 +2469,7 @@
             <!-- QR Code para Registro Rápido -->
             <div style="text-align: center; margin-top: 2.5rem; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 15px;">
                 <p style="font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">📱 O escanea para registrarte al instante</p>
-                <img src="diacua-viva-REGISTRATE.png" alt="QR Regístrate" style="width: 120px; height: 120px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                <img src="diacua-viva-REGISTRATE.png" alt="QR Regístrate" style="width: 120px; height: 120px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" loading="lazy">
                 <p style="font-size: 0.9rem; margin-top: 0.8rem; opacity: 0.9;">Escanea y súmate a DIACUA VIVA</p>
             </div>
 
