@@ -25,26 +25,8 @@
     </script>
     <!-- Ejemplo de uso de CDN ficticio para recursos estáticos -->
     <!-- Antes: <link rel="stylesheet" href="/css/estilos.css"> -->
-    <link rel="stylesheet" href="https://cdn.ejemplo.com/css/estilos.min.css">
-    <!-- Antes: <script src="/js/app.js" defer></script> -->
-    <script src="https://cdn.ejemplo.com/js/app.min.js" defer></script>
-    <!-- Así, los recursos se sirven desde el CDN y no desde tu servidor principal -->
+    <!-- CSS crítico inline para el primer renderizado -->
     <style>
-                @media (max-width: 600px) {
-                    /* Reduce el video y el banner un 10% en móviles */
-                    .video-logo {
-                        width: 90% !important;
-                        max-width: 90vw !important;
-                    }
-                    iframe {
-                        width: 90% !important;
-                        height: 90% !important;
-                        max-width: 90vw !important;
-                    }
-                    .hero h1, .hero h2, h2 {
-                        font-size: 90% !important;
-                    }
-                }
         :root {
             --primary: #2d5016;
             --secondary: #6b9b37;
@@ -69,14 +51,6 @@
             position: relative;
             overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            opacity: 0;
-            display: none;
-        }
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -90,15 +64,6 @@
             opacity: 0.95;
             position: relative;
             z-index: 1;
-        }
-        .tagline {
-            font-size: 1.1rem;
-            font-style: italic;
-            background: rgba(255,255,255,0.2);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            display: inline-block;
-            backdrop-filter: blur(10px);
         }
         .container {
             max-width: 1200px;
@@ -132,6 +97,23 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px var(--shadow);
         }
+        @media (max-width: 600px) {
+            .video-logo {
+                width: 90% !important;
+                max-width: 90vw !important;
+            }
+            iframe {
+                width: 90% !important;
+                height: 90% !important;
+                max-width: 90vw !important;
+            }
+            .hero h1, .hero h2, h2 {
+                font-size: 90% !important;
+            }
+        }
+    </style>
+    <!-- Resto del CSS diferido: Enlaces a CDN de ejemplo eliminados para evitar errores 404. -->
+    <style>
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -150,17 +132,19 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 12px var(--shadow);
         }
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
+    .navbar {
+        /* ...otros estilos... */
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
         .card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
         .accordion {
-            margin: 2rem 0;
+              margin: 2rem 0;
+              margin-left: 2.5rem;
+              margin-right: 2.5rem;
         }
         .accordion-item {
             background: white;
@@ -2420,7 +2404,7 @@
             <p style="text-align: center; color: #666; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 Organizaciones que creen en el poder    transformador de la cultura en tu ciudad.
             </p>
-            
+           
             <div class="sponsors-grid">
                 <!-- Logos Reales -->
                 <img src="logo nexus.png" alt="neus lab gestion digital" class="sponsor-img" loading="lazy">
@@ -2430,13 +2414,15 @@
                 <img src="logo_casa_meta.png" alt="Casa Meta" class="sponsor-img" loading="lazy">
                 <img src="logo innova manager.png" alt="innova manager" class="sponsor-img" loading="lazy">
                  <img src="logo_gobernación.png" alt="Gobernación del Meta" class="sponsor-img" loading="lazy">
-                <img src="logo_teopol.png" alt="Teopolítica" class="sponsor-img" loading="lazy">
+                
+                <!-- Aliados y Patrocinadores -->
+                 <img src="logo_teopol.png" alt="Teopolítica" class="sponsor-img" loading="lazy">
                 <img src="ekine logo 3.png" alt="Ekine" class="sponsor-img" loading="lazy">
                 <img src="mini_dominion.png" alt="Dominion Natura" class="sponsor-img" loading="lazy">
                 <img src="logo_sena.png" alt="SENA" class="sponsor-img" loading="lazy">
                 <img src="log_passio_vertice.png" alt="passio Vertice" class="sponsor-img" loading="lazy">
                     <div style="grid-column: 1 / -1; display: flex; justify-content: center;">
-                        <img src="logo_fundacyt.png" alt="logo_fundacyt" class="sponsor-img" loading="lazy">
+                        <img src="logo_fundacyt.png" alt="logo_fundacyt" class="sponsor-img" loading="lazy"> 
                     </div>
             </div>
 
@@ -2481,6 +2467,43 @@
             </div>
         </section>
     </div>
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="fade-in">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Preguntas Frecuentes (FAQ)</h2>
+            <div class="accordion" style="max-width: 900px; margin: 0 auto;">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>¿Qué es exactamente DIACUA VIVA?</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Es un laboratorio de investigación y gestión cultural que utiliza una metodología propia (El Árbol Cultural) para diagnosticar y fortalecer el ecosistema cultural de Villavicencio, enfocándose en la identidad local y el arraigo.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>¿Cómo puedo participar o colaborar?</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Puedes sumarte como voluntario, proponer una iniciativa cultural, convertirte en un aliado estratégico si representas a una organización, o apoyar como patrocinador. Explora la sección "Súmate al Ecosistema" y llena el formulario que corresponda a tu interés.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>¿Este proyecto es solo para artistas?</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>No. DIACUA VIVA es para todos los ciudadanos. Buscamos integrar a artistas, gestores, académicos, empresarios, líderes comunitarios, estudiantes y cualquier persona interesada en el desarrollo cultural de la región.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
